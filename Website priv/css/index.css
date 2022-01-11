@@ -1,0 +1,14 @@
+body {
+    background-color: rgb(255, 236, 211);
+    font-family: MinecraftiaRegular;
+}
+
+.center {
+    text-align: center;
+}
+
+.first {
+    background: lightgrey;
+    border: black solid;
+}
+
