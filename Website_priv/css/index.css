@@ -1,6 +1,6 @@
 body {
-    background-color: rgb(255, 236, 211);
-    font-family: MinecraftiaRegular;
+    background-color: rgb(235, 246, 255);
+    font-family: "Varela Round";
 }
 
 .center {
@@ -8,8 +8,8 @@ body {
 }
 
 .first {
-    background: lightgrey;
-    border: black solid;
+    background: rgb(244, 255, 246);
+    border: rgb(0, 0, 0) solid;
     padding-left: 5px;
     margin: 10px;
     border-radius: 6px;
@@ -40,11 +40,28 @@ body {
     margin: auto;
     margin-bottom: 50px;
     background-color: greenyellow;
-    transition-duration: 500ms;
+    transition-duration: 750ms;
     transition-timing-function: cubic-bezier(.77,0,.18,1);
 }
 
 .box:hover {
     background-color: red;
-    transform: rotate(135deg);
+    transform: rotate(90deg);
+    border-radius: 50%;
 }
+
+.circle {
+    margin: auto;
+    margin-bottom: 50px;
+    border: 10px solid #000000;
+    border-top: 10px solid #ffffff;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    animation: spin 1000ms linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
