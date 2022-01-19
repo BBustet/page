@@ -50,6 +50,10 @@ body {
     border-radius: 50%;
 }
 
+.box:active {
+    background-color: black;
+}
+
 .circle {
     margin: auto;
     margin-bottom: 50px;
