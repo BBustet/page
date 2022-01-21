@@ -15,7 +15,7 @@ body {
     border-radius: 6px;
 }
 
-.headline{
+.headline {
     font-size: 75px;
     margin: 50px;
 }
@@ -23,16 +23,26 @@ body {
 .grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: 
-    "two one one three"
-    "four four five three";
+    grid-template-areas:
+        "two one one three"
+        "four four five three";
 }
 
-.one {grid-area: one;}
-.two {grid-area: two;}
-.three {grid-area: three;}
-.four {grid-area: four;}
-.five {grid-area: five;}
+.one {
+    grid-area: one;
+}
+.two {
+    grid-area: two;
+}
+.three {
+    grid-area: three;
+}
+.four {
+    grid-area: four;
+}
+.five {
+    grid-area: five;
+}
 
 .box {
     width: 100px;
@@ -41,7 +51,7 @@ body {
     margin-bottom: 50px;
     background-color: greenyellow;
     transition-duration: 750ms;
-    transition-timing-function: cubic-bezier(.77,0,.18,1);
+    transition-timing-function: cubic-bezier(0.77, 0, 0.18, 1);
 }
 
 .box:hover {
@@ -59,9 +69,13 @@ body {
     width: 80px;
     height: 80px;
     animation: spin 1000ms linear infinite;
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
