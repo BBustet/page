@@ -1,13 +1,13 @@
 <html style="background-color: black; color: white">
-	<head>
-		<title>32_Kelvin</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<script>
-			"use strict";
+    <head>
+        <title>32_Kelvin</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script>
+            "use strict";
 
-			// Programmiere hier die Funktion calc(number)
+            // Programmiere hier die Funktion calc(number)
             function calc(celsius) {
-                celsius = parseFloat(celsius)
+                celsius = parseFloat(celsius);
                 var kelvin = celsius + 273.15;
                 var ausgabe;
                 if (celsius < 20) {
@@ -15,27 +15,25 @@
                 } else if (celsius > 20) {
                     ausgabe = "Es ist warm.";
                 } else if (celsius < 5) {
-                    ausgabe = "Es ist sau kalt."
+                    ausgabe = "Es ist sau kalt.";
                 }
                 ausgabe = "Die Temperatur von " + celsius + " Grad Celsius entspricht der Temperatur von " + kelvin + " Grad Kelvin. " + ausgabe;
-                
+
                 return ausgabe;
             }
 
+            function clicked() {
+                var input = document.getElementById("idInput").value;
+                var output = calc(input);
+                document.getElementById("idOutput").innerHTML = output;
+            }
+        </script>
+    </head>
 
-			function clicked() {
-				var input = document.getElementById("idInput").value;
-				var output = calc(input);
-				document.getElementById("idOutput").innerHTML = output;
-			}
-
-		</script>
-	</head>
-
-	<body>
-		<h1>32_Kelvin</h1>
-		Celsius in Kelvin: <input id="idInput" type="text" value="20" style="background-color:black; color: white"><br /><br />
-		<button onClick="clicked();" style="background-color: black; color: white">Berechne etwas!</button><br /><br />
-		<div id="idOutput">Hier kommt beim Klicken auf den Button eine Ausgabe.</div>
-	</body>
+    <body>
+        <h1>32_Kelvin</h1>
+        Celsius in Kelvin: <input id="idInput" type="text" value="20" style="background-color: black; color: white" /><br /><br />
+        <button onClick="clicked();" style="background-color: black; color: white">Berechne etwas!</button><br /><br />
+        <div id="idOutput">Hier kommt beim Klicken auf den Button eine Ausgabe.</div>
+    </body>
 </html>
