@@ -12,7 +12,10 @@
                 var i = 1;
 
                 while (i <= number) {
-                    console.log("i: " + i);
+                    var kosten;
+                    kosten = 142 + i * 0.12;
+
+                    console.log(i + " " + kosten);
                     i = i + 1;
                 }
 
@@ -35,5 +38,11 @@
         Zähle bis: <input id="idInput" type="text" value="5" /><br /><br />
         <button onClick="clicked();">Berechne etwas!</button><br /><br />
         <div id="idOutput">Hier kommt beim Klicken auf den Button eine Ausgabe.</div>
+        <table border="1px">
+            <tr>
+                <th>Waffeln</th>
+                <th>Kosten</th>
+            </tr>
+        </table>
     </body>
 </html>
