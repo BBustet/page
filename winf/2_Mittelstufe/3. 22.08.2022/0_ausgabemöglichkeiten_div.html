@@ -9,6 +9,12 @@
             function fDivHallo() {
                 document.getElementById("idAusgabe").innerHTML = "Hallo";
             }
+            function fDivWelt() {
+                document.getElementById("idAusgabe").innerHTML = "Welt";
+            }
+            function fDivAusrufezeichen() {
+                document.getElementById("idAusgabe").innerHTML = "!";
+            }
         </script>
 
         <script type="text/javascript" src="https://kachelmann.schulon.org/js.php?user=&currentService=es-workspace"></script>
@@ -17,6 +23,10 @@
     <body>
         <h1>Ausgabemöglichkeiten</h1>
         <button onClick="fDivHallo();">Ausgabe von 'Hallo' in ein Div-Element!</button>
+        <br />
+        <button onClick="fDivWelt();">Ausgabe von 'Welt' in ein Div-Element!</button>
+        <br />
+        <button onClick="fDivAusrufezeichen();">Ausgabe von '!' in ein Div-Element!</button>
         <br />
         <br />
         <div id="idAusgabe">Bitte den Button klicken! Nach dem Klicken des Buttons erscheint hier eine Ausgabe</div>
