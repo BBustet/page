@@ -7,6 +7,19 @@
 
         <script>
             "use strict";
+
+            function fDivision(divisor; divident) {
+                return divisor / divident;
+            }
+
+            function rechnen() {
+                var divisor = document.getElementById("divisor").value;
+                var divident = document.getElementById("divident").value;
+
+                var output = "Die Division von " + divisor + " mit " + divident + " ergibt: " + fDivision(divisor; divident);
+                document.getElementById("idOutput").innerHTML = output;
+            }
+
         </script>
 
         <script type="text/javascript"
@@ -14,7 +27,11 @@
     </head>
 
     <body>
-        <h1>Vorlage</h1>
+        <h1>Dividieren</h1>
+        <p>Eingabe Divisor: <input id="divisor" type="text" value="" /> Eingabe Divident: <input id="divident"
+                type="text" value="" /></p>
+        <button onclick="rechnen()">Ausrechnen</button>
+        <div id="idOutput">Hier kommt beim Klicken auf den Button eine Ausgabe.</div>
     </body>
 
 </html>
