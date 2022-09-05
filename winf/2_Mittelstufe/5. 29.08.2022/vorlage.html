@@ -8,28 +8,27 @@
         <script>
             "use strict";
 
-            function fDivision(divisor; divident) {
-                return divisor / divident;
+            function fDivision(input1, input2) {
+                return input1 / input2;
             }
 
             function rechnen() {
-                var divisor = document.getElementById("divisor").value;
-                var divident = document.getElementById("divident").value;
+                var input1 = document.getElementById("x").value;
+                var input2 = document.getElementById("y").value;
 
-                var output = "Die Division von " + divisor + " mit " + divident + " ergibt: " + fDivision(divisor; divident);
+                var output = fDivision(input1, input2)
+                console.log(output)
                 document.getElementById("idOutput").innerHTML = output;
             }
 
         </script>
 
-        <script type="text/javascript"
-            src="https://kachelmann.schulon.org/js.php?user=&currentService=es-workspace"></script>
     </head>
 
     <body>
         <h1>Dividieren</h1>
-        <p>Eingabe Divisor: <input id="divisor" type="text" value="" /> Eingabe Divident: <input id="divident"
-                type="text" value="" /></p>
+        <p>Eingabe Divisor: <input id="x" type="text" value="" /> Eingabe Divident: <input id="y" type="text"
+                value="" /></p>
         <button onclick="rechnen()">Ausrechnen</button>
         <div id="idOutput">Hier kommt beim Klicken auf den Button eine Ausgabe.</div>
     </body>
