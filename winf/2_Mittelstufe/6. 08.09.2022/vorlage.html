@@ -1,0 +1,31 @@
+<html>
+
+    <head>
+        <title>Quadratwurzel</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+            function fsqrt() {
+                var input = document.getElementById("idInput").value;
+
+                var sqrt = Math.sqrt(input);
+                var output = "Die Quadratwurzel von " + input + " ist " + sqrt + "!";
+
+                document.getElementById("idOutput").innerHTML = output;
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Quadratwurzel</h1>
+        <input id="idInput" type="text" value=""><button onclick="fsqrt();">Klicke hier zum rechnen!</button>
+        <br /><br />
+        <div id="idOutput">Hier kommt das Ergebnis raus!</div>
+    </body>
+
+</html>
