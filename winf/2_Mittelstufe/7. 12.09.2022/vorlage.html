@@ -1,0 +1,54 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+            function fTop() {
+                var vMeinung;
+                vMeinung = "top!"
+            }
+
+            function fLala() {
+                var vMeinung;
+                vMeinung = "so la la!"
+            }
+
+            function fBlöd() {
+                var vMeinung;
+                vMeinung = "blöd!"
+            }
+
+            function fUnterricht() {
+                var vVorname;
+                var vKlasse;
+                var vAusgabe;
+
+                vVorname = document.getElementById("idVornameInput").value;
+                vKlasse = document.getElementById("idKlasseInput").value;
+                vAusgabe = vVorname + " aus der " + vKlasse + " fand die heutige Stunde " + vMeinung;
+
+                document.getElementById("idAusgabe").innerHTML = vAusgabe
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Wie war die heutige Unterrichtsstunde?</h1>
+        Vorname: <input id="idVornameInput" type="text" value="xxx">
+        <br /><br />
+        Klasse: <input id="idKlasseInput" type="text" value="xxx">
+        <br /><br />
+        <button onClick="fTop();">Top :)</button><button onClick="fLala();">So fLala :|</button><button
+            onClick="fBlöd(); fUnterricht();">blöd :(</button>
+        <br /><br />
+        <div id="idAusgabe">Hier steht später, wie die heutige Unterrichtsstunde bewertet wurde.</div>
+    </body>
+
+</html>
