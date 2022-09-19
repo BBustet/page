@@ -7,14 +7,29 @@
 
         <script>
             "use strict";
+
+            function fRechnen() {
+                var vCelsius;
+                var vFahrenheit;
+                var vAusgabe;
+
+                vCelsius = document.getElementById("idCelsius").value;
+                vFahrenheit = vCelsius * 1.8 + 32;
+                vAusgabe = "Fahrenheit: " + vFahrenheit + " °F";
+
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
         </script>
 
-        <script type="text/javascript"
-            src="https://kachelmann.schulon.org/js.php?user=&currentService=es-workspace"></script>
     </head>
 
     <body>
-        <h1>Vorlage</h1>
+        <h1>Celsius - Fahrenheit Umrechner</h1>
+        Celsius °C: <input id="idCelsius" type="text"> <button onclick="fRechnen();">Berechne aus Celsius
+            Fahrenheit!</button>
+        <br />
+        <div id="idAusgabe"></div>
     </body>
 
 </html>
