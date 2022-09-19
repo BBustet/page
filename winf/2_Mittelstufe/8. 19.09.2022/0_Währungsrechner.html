@@ -1,0 +1,37 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+            function fRechnen() {
+                var vDollar;
+                var vKurs;
+                var vEuro;
+                var vAusgabe;
+
+                vDollar = document.getElementById("idDollar").value;
+                vKurs = document.getElementById("idKurs").value;
+                vEuro = vDollar * vKurs;
+                vAusgabe = "Euro: " + vEuro + " €";
+
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Währungsumrechner</h1>
+        Dollar $: <input id="idDollar" type="text"> Aktueller Kurs: <input id="idKurs" type="text"> <button
+            onclick="fRechnen();">Währungsrechner</button>
+        <br />
+        <div id="idAusgabe"></div>
+    </body>
+
+</html>
