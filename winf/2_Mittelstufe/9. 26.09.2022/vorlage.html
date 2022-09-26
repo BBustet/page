@@ -9,17 +9,31 @@
             "use strict";
 
             function fSqrt() {
-                var vRadikant;
+                var vWurzel;
                 var vErgebnis;
                 var vAusgabe;
 
-                vRadikant = document.getElementById("idRadikant").value;
+                vWurzel = document.getElementById("idWurzel").value;
 
-                vErgebnis = Math.sqrt(vRadikant);
+                vErgebnis = Math.sqrt(vWurzel);
 
-                vAusgabe = "Die Wurzel aus " + vRadikant + " ist " + vErgebnis;
+                vAusgabe = "Die Wurzel aus " + vWurzel + " ist " + vErgebnis;
 
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+            function fPotenzieren() {
+                var vExponent;
+                var vRadikant;
+                var vPotenzAusgabe;
+
+
+
+                vExponent = document.getElementById("idExponent").value;
+                vRadikant = parseFloat(vExponent) * parseFloat(vExponent);
+                vPotenzAusgabe = "Der Radikant von " + vExponent + " ist " + vRadikant;
+
+                document.getElementById("idPotenzAusgabe").innerHTML = vPotenzAusgabe;
             }
 
         </script>
@@ -28,9 +42,14 @@
 
     <body>
         <h1>Wurzelrechnung</h1>
-        Radikant: <input id="idRadikant" type="text"><button onclick="fSqrt();">Berechnen</button>
+        Radikant: <input id="idWurzel" type="text"><button onclick="fSqrt();">Berechnen</button>
         <br />
         <div id="idAusgabe"></div>
+        <br /><br />
+        <h1>Potenzrechnung</h1>
+        Exponent: <input id="idExponent" type="text"><button onclick="fPotenzieren();">Berechnen</button>
+        <br />
+        <div id="idPotenzAusgabe"></div>
     </body>
 
 </html>
