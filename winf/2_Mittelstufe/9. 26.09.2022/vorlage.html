@@ -1,0 +1,36 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+            function fSqrt() {
+                var vRadikant;
+                var vErgebnis;
+                var vAusgabe;
+
+                vRadikant = document.getElementById("idRadikant").value;
+
+                vErgebnis = Math.sqrt(vRadikant);
+
+                vAusgabe = "Die Wurzel aus " + vRadikant + " ist " + vErgebnis;
+
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Wurzelrechnung</h1>
+        Radikant: <input id="idRadikant" type="text"><button onclick="fSqrt;()">Berechnen</button>
+        <br />
+        <div id="idAusgabe"></div>
+    </body>
+
+</html>
