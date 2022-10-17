@@ -1,0 +1,46 @@
+<html class=" xbvpiruvm idc0_343">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<title>Quadratwurzelrechner</title>
+
+
+		<script>
+			"use strict";
+
+			function fWurzelZiehen() {
+
+				var vRadikand;
+				var vWurzel;
+				vRadikand = document.getElementById("idRadikand").value;
+
+
+				vWurzel = Math.pow(vRadikand, 2);
+
+
+				var vAusgabeHtml;
+
+				vAusgabeHtml = "";
+				vAusgabeHtml = vAusgabeHtml + "Die Wurzel vom Radikand ";
+				vAusgabeHtml = vAusgabeHtml + vRadikand;
+				vAusgabeHtml = vAusgabeHtml + " ist ";
+				vAusgabeHtml = vAusgabeHtml + vWurzel;
+				vAusgabeHtml = vAusgabeHtml + ".";
+				document.getElementById("idAusgabeHtml").innerHTML = vAusgabeHtml;
+			}
+
+		</script>
+	</head>
+
+	<body>
+		<h1>Quadratwurzel ziehen</h1>
+		Radikand: <input id="idRadikand" type="string" value="9" control-id="ControlID-1"> <br>
+		<br>
+		<button onclick="fWurzelZiehen();" control-id="ControlID-2">Berechne die Quadratwurzel</button><br><br>
+		<div id="idAusgabeHtml">Bitte den Button klicken! Danach Ausgabe erscheint hier die Ausgabe</div>
+
+
+
+	</body>
+
+</html>
