@@ -1,0 +1,43 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+
+            function rechnen() {
+                var vInput1;
+                var vInput2;
+                var vErgebnis;
+                var vOutput;
+
+                vInput1 = document.getElementById("x").value;
+                vInput2 = document.getElementById("y").value;
+
+                if (vInput2 == 0) {
+                    vErgebnis = "Eine Division durch 0 ist nicht möglich";
+                } else {
+                    vErgebnis = vInput1 / vInput2;
+                }
+                console.log(vErgebnis);
+                vOutput = vErgebnis;
+                document.getElementById("idOutput").innerHTML = vOutput;
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Dividieren</h1>
+        <p>Eingabe Dividend: <input id="x" type="text" value="" /> Eingabe Divisor: <input id="y" type="text"
+                value="" /></p>
+        <button onclick="rechnen()">Ausrechnen</button>
+        <div id="idOutput">Hier kommt beim Klicken auf den Button eine Ausgabe.</div>
+    </body>
+
+</html>
