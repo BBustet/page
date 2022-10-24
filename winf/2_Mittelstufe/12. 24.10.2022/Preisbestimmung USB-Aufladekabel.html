@@ -1,0 +1,41 @@
+<!-- saved from url=(0125)https://moodle.leo-statz-berufskolleg.de/pluginfile.php/362726/mod_resource/content/1/Preisbestimmung%20USB-Aufladekabel.html -->
+<html class=" nwzglmoc idc0_343">
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Preisbestimmung USB-Aufladekabel </title>
+
+
+        <script>
+            "use strict";
+
+            function fPreisBestimmung() {
+                var vMenge;
+                var vPreis;
+                var vAusgabe;
+
+                vMenge = document.getElementById("idMenge").value;
+                vMenge = parseFloat(vMenge)
+
+                if (vMenge < 100) {
+                    vPreis = vMenge * 9.99;
+                } else {
+                    vPreis = vMenge * 8.99;
+                }
+
+                vAusgabe = "Der Preis beträgt bei einer Menge von " + vMenge + " USB-Aufladekabeln " + vPreis + "€.";
+
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Preisbestimmung USB-Aufladekabel</h1>
+        Menge in Stück: <input id="idMenge" type="text" value="xxx" control-id="ControlID-1"><br><br>
+        <button onclick="fPreisBestimmung();" control-id="ControlID-2">Bestimme den Preis!</button><br><br>
+        <div id="idAusgabe">Hier steht später, wie hoch der Preis ist.</div>
+
+    </body>
+
+</html>
