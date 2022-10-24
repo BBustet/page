@@ -12,18 +12,21 @@
             function fPreisBestimmung() {
                 var vMenge;
                 var vPreis;
+                var vGesamt;
                 var vAusgabe;
 
                 vMenge = document.getElementById("idMenge").value;
-                vMenge = parseFloat(vMenge)
+                vMenge = parseFloat(vMenge);
 
                 if (vMenge < 100) {
-                    vPreis = vMenge * 9.99;
+                    vPreis = 9.99;
                 } else {
-                    vPreis = vMenge * 8.99;
+                    vPreis = 8.99;
                 }
 
-                vAusgabe = "Der Preis beträgt bei einer Menge von " + vMenge + " USB-Aufladekabeln " + vPreis + "€.";
+                vGesamt = vMenge * vPreis;
+
+                vAusgabe = "Der Stückpreis beträgt bei einer Menge von " + vMenge + " USB-Aufladekabeln " + vPreis + "€ und der Gesamtpreis beträgt " + vGesamt + "€.";
 
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
