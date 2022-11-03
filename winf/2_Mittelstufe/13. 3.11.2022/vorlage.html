@@ -7,12 +7,50 @@
 
         <script>
             "use strict";
+
+            function fRechnen() {
+                var vFix;
+                var vVkosten;
+                var vPmenge;
+                var vVkpreis;
+                var vKosten;
+                var vErlös;
+                var vGewinn;
+                var vAusgabe;
+
+                vFix = document.getElementById("idFix").value;
+                vVkosten = document.getElementById("idVkosten").value;
+                vPmenge = document.getElementById("idPmenge").value;
+                vVkpreis = document.getElementById("idVkpreis").value;
+
+                vFix = parseFloat(vFix);
+                vVkosten = parseFloat(vVkosten);
+                vPmenge = parseFloat(vPmenge);
+                vVkpreis = parseFloat(vVkpreis);
+
+                vKosten = vFix + vVkosten;
+                vErlös = vPmenge * vVkpreis;
+                vGewinn = vErlös - vKosten;
+
+                vAusgabe = "Der Erlös liegt bei einem Verkaufspreis von " + vVkpreis + "€ und " + vPmenge + " Stück bei " + vErlös + "€.<br/> Die Kosten liegen bei " + vKosten + "€ welche sich aus den " + vFix + "€ Fixkosten und " + vVkosten + "€ variablen Kosten zusammensetzen. Der Gewinn liegt darum bei: <b>" + vGewinn + "€</b>.";
+
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+
+            }
+
         </script>
 
     </head>
 
     <body>
-        <h1>Vorlage</h1>
+        <h1>Rechner</h1>
+        Fixkosten: <input id="idFix" type="text">€<br />
+        Variable Kosten: <input id="idVkosten" type="text">€<br />
+        Produktionsmenge: <input id="idPmenge" type="text">Stück<br />
+        Verkaufspreis: <input id="idVkpreis" type="text">€<br />
+        <button onClick="fRechnen();">Rechne!</button><br /><br />
+
+        <div id="idAusgabe">Hier steht gleich das Ergebnis</div>
     </body>
 
 </html>
