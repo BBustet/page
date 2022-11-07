@@ -1,0 +1,49 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+
+            function fUmrechnenEuro() {
+                var vDolEingabe;
+                var vDolErgebnis;
+                var vDolAusgabe;
+
+                vDolEingabe = document.getElementById("idEingabe").value;
+                vDolErgebnis = vDolEingabe * 0.99;
+                vDolAusgabe = vDolEingabe + "€ sind bei einem Kurs von 0,99, <b>" + vDolErgebnis + "$</b>."
+
+                document.getElementById("idAusgabe").innerHTML = vDolAusgabe;
+            }
+
+            function fUmrechnenDollar() {
+                var vEurEingabe;
+                var vEurErgebnis;
+                var vEurAusgabe;
+
+                vEurEingabe = document.getElementById("idEingabe").value;
+                vEurErgebnis = vEurEingabe * 1.01;
+                vEurAusgabe = vEurEingabe + "$ sind bei einem Kurs von 1,01, <b>" + vEurErgebnis + "€</b>."
+
+                document.getElementById("idAusgabe").innerHTML = vEurAusgabe;
+            }
+
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Währungsrechner</h1>
+        Geldbetrag: <input id="idEingabe"> in €/$
+        <br />
+        <button onclick="fUmrechnenEuro();">In $ umrechnen</button><button onclick="fUmrechnenDollar();">In €
+            umrechnen</button>
+        <br />
+        <div id="idAusgabe">Hier steht gleich das Ergebnis</div>
+    </body>
+
+</html>
