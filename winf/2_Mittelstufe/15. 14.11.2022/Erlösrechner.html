@@ -43,10 +43,15 @@
 					// Gewinn ist Erlös - Gesamtkosten(Variable und Flexible Kosten)
 					vG = vE - vKostGesamt;
 					vGewinnGesamt = vGewinnGesamt + vG;
-					if (vG < 0) {
-						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td style = color:red>" + vG.toFixed(2) + " € " + "</td></tr>";
+
+					// Ausgabe je Menge in tausender Schritten
+					if (vG > 0) {
+						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td style = background-color:green>" + vG.toFixed(2) + " € " + "</td></tr>";
+
+					} else if (vG < 0) {
+						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td style = background-color:red>" + vG.toFixed(2) + " € " + "</td></tr>";
+
 					} else {
-						// Ausgabe je Menge in tausender Schritten
 						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td>" + vG.toFixed(2) + " € " + "</td></tr>";
 					}
 
