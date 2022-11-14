@@ -1,8 +1,9 @@
-<!-- saved from url=(0104)https://moodle.leo-statz-berufskolleg.de/pluginfile.php/364482/mod_resource/content/1/Erloesrechner.html -->
-<html class=" njgyepg idc0_344">
+<!-- saved from url=(0118)https://moodle.leo-statz-berufskolleg.de/pluginfile.php/365908/mod_resource/content/1/Erl%C3%B6srechner%20%281%29.html -->
+<html class=" njgyepg idc0_344 pfdgbpip">
 
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 		<title>Erlösrechner</title>
 		<script>
 			"use strict";
@@ -26,7 +27,7 @@
 				vKV = parseFloat(document.getElementById("idKV").value);
 				vKF = parseFloat(document.getElementById("idKF").value);
 
-				// Hier wird eine Tabesllenkopf (Spaltennamen) für die Ausgabe erzeugt, dieser muss nur einmalig erzeugt werden 
+				// Hier wird eine Tabellenkopf (Spaltennamen) für die Ausgabe erzeugt, dieser muss nur einmalig erzeugt werden 
 				vAusgabe = "";
 				vAusgabe = vAusgabe + "<table border=1>";
 				vAusgabe = vAusgabe + "<tr><th>Menge</th><th>Kosten K(x) = k<sub>F</sub> + k<sub>v</sub> * x </th><th>Erlöse E (x) = p * × </td><th>Gewinn G(x) = E(x) - K(x)</th></tr>";
@@ -42,15 +43,10 @@
 					// Gewinn ist Erlös - Gesamtkosten(Variable und Flexible Kosten)
 					vG = vE - vKostGesamt;
 					vGewinnGesamt = vGewinnGesamt + vG;
-
-					// Ausgabe je Menge in tausender Schritten
-					if (vG > 0) {
-						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td style = background-color:green>" + vG.toFixed(2) + " € " + "</td></tr>";
-
-					} else if (vG < 0) {
-						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td style = background-color:red>" + vG.toFixed(2) + " € " + "</td></tr>";
-
+					if (vG < 0) {
+						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td style = color:red>" + vG.toFixed(2) + " € " + "</td></tr>";
 					} else {
+						// Ausgabe je Menge in tausender Schritten
 						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td>" + vG.toFixed(2) + " € " + "</td></tr>";
 					}
 
@@ -73,6 +69,9 @@
 		Stückpreis(p): <input id="idPreis" value="7.50" size="6" control-id="ControlID-4">
 		<button onclick="fErloesrechner();" control-id="ControlID-5">Kostentabelle!</button><br><br>
 		<div id="idAusgabe"></div>
+
+
+
 
 
 	</body>
