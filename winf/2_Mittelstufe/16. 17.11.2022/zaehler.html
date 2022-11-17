@@ -1,0 +1,37 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+            function fZaehlen() {
+                var vEingabe;
+                var vZahl = 0;
+                var vAusgabe;
+
+                vEingabe = document.getElementById("idEingabe").value;
+
+                while (vZahl <= vEingabe) {
+
+                    vAusgabe = vAusgabe + vZahl;
+                    document.getElementById("idZaehler").innerHTML = vAusgabe;
+
+                    vZahl = vZahl + 1;
+                }
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Zähler</h1>
+        <input id="idEingabe" type="text" value="10"> <button onclick="fZaehlen();">Hier klicken zum zählen</button>
+        <div id="idZaehler">Hier wird gezählt!</div>
+    </body>
+
+</html>
