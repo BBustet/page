@@ -44,15 +44,9 @@
 					vGewinnGesamt = vGewinnGesamt + vG;
 
 					// Ausgabe je Menge in tausender Schritten
-					if (vG > 0) {
-						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td style = background-color:green>" + vG.toFixed(2) + " € " + "</td></tr>";
 
-					} else if (vG < 0) {
-						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td style = background-color:red>" + vG.toFixed(2) + " € " + "</td></tr>";
+					vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td>" + vG.toFixed(2) + " € " + "</td></tr>";
 
-					} else {
-						vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " € " + "</td><td>" + vE.toFixed(2) + " € " + "</td><td>" + vG.toFixed(2) + " € " + "</td></tr>";
-					}
 
 					vMenge = vMenge + 1000;
 				}
