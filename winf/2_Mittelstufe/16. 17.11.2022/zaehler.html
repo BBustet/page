@@ -10,14 +10,15 @@
 
             function fZaehlen() {
                 var vEingabe;
-                var vZahl = ;
+                var vZahl = 0;
                 var vAusgabe;
 
                 vEingabe = document.getElementById("idEingabe").value;
                 vAusgabe = "";
+
                 while (vZahl <= vEingabe) {
 
-                    vAusgabe = vAusgabe + vZahl;
+                    vAusgabe = vAusgabe + vZahl + " / " + vEingabe + "<br/>";
 
                     document.getElementById("idZaehler").innerHTML = vAusgabe;
 
