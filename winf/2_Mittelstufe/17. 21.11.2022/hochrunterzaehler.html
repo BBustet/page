@@ -1,0 +1,65 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+            function fZaehlenH() {
+                var vEingabe;
+                var vZahl = 0;
+                var vAusgabe;
+
+                vEingabe = document.getElementById("idEingabe").value;
+                vAusgabe = "";
+
+                do {
+
+                    vAusgabe = vAusgabe + vZahl + " / " + vEingabe + "<br/>";
+
+                    document.getElementById("idZaehler").innerHTML = vAusgabe;
+
+                    vZahl = vZahl + 1;
+
+                } while (vZahl <= vEingabe)
+            }
+
+
+            function fZaehlenR() {
+                var vEingabeR;
+                var vZahlR;
+                var vAusgabeR;
+
+                vEingabeR = document.getElementById("idEingabe").value;
+                parseFloat(vEingabeR);
+                vZahlR = vEingabeR
+                vAusgabeR = "";
+
+                do {
+
+                    vAusgabeR = vAusgabeR + vZahlR + " / " + vEingabeR + "<br/>";
+
+                    document.getElementById("idZaehler").innerHTML = vAusgabeR;
+
+                    vZahlR = vZahlR - 1;
+
+                } while (vZahlR >= 0)
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Hoch-/Runterzähler</h1>
+        <input id="idEingabe" type="text" value="10">
+        <br />
+        <button onclick="fZaehlenH();">Bis hierhin zählen</button><button onclick="fZaehlenR();">Von dort
+            runterzählen</button>
+        <div id="idZaehler">Hier wird gezählt!</div>
+    </body>
+
+</html>
