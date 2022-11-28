@@ -1,0 +1,48 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+            function fKapitalrechner() {
+                var vLaufzeit;
+                var vStartkapital;
+                var vSparrate;
+                var vEndkapital;
+                var vAusgabe;
+                var vZwischenzeit = 0;
+
+                vLaufzeit = document.getElementById("idLaufzeit").value;
+                vStartkapital = document.getElementById("idStartkapital").value;
+                vSparrate = document.getElementById("idSparrate").value;
+                vAusgabe = "";
+
+                while (vZwischenzeit > vLaufzeit) {
+                    vZwischenzeit = vZwischenzeit + 1;
+                    vEndkapital = vStartkapital + vZwischenzeit * vSparrate;
+                    vAusgabe = "Ihr Kapital von " + vStartkapital + "€ beträgt nach " + vLaufzeit + " Jahr/en Laufzeit " + vEndkapital + "€.";
+                    console.log(vAusgabe);
+                    document.getElementById("idAusgabe").innerHTML = vAusgabe;
+                }
+
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Kapitalrechner</h1>
+        Laufzeit: <input id="idLaufzeit" type="text" value="5"><br />
+        Startkapital: <input id="idStartkapital" type="text" value="10000"><br />
+        Sparrate: <input id="idSparrate" type="text" value="50"><br />
+        <button onclick="fKapitalrechner();">Rechne aus</button><br />
+        <br />
+        <div id="idAusgabe">Hier steht gleich das Ergebnis</div>
+    </body>
+
+</html>
