@@ -19,9 +19,11 @@
                 vLaufzeit = document.getElementById("idLaufzeit").value;
                 vStartkapital = document.getElementById("idStartkapital").value;
                 vSparrate = document.getElementById("idSparrate").value;
+
                 parseFloat(vLaufzeit);
                 parseFloat(vStartkapital);
                 parseFloat(vSparrate);
+
                 vAusgabe = "";
 
                 while (vZwischenzeit < vLaufzeit) {
@@ -29,7 +31,7 @@
 
                     vEndkapital = parseFloat(vStartkapital) + parseFloat(vZwischenzeit) * parseFloat(vSparrate);
                     vAusgabe = vAusgabe + "Ihr Kapital von " + vStartkapital + "€ beträgt nach " + vZwischenzeit + " Jahr/en Laufzeit <b>" + vEndkapital + "€.</b><br/>";
-                    console.log(vAusgabe);
+
                     document.getElementById("idAusgabe").innerHTML = vAusgabe;
                 }
 
