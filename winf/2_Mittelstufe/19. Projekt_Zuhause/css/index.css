@@ -1,0 +1,33 @@
+.Rechner {
+    border: 1;
+    width: 400px;
+}
+
+tr {
+    height: 100px;
+    width: 400px;
+}
+
+.Zahl {
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    font-size: 50;
+    text-align: center;
+}
+
+.Rechenoperator {
+    width: 100px;
+    height: 100px;
+    font-weight: bold;
+    font-size: 50;
+    text-align: center;
+}
+
+.Rechenoperator2 {
+    width: 100px;
+    height: 206px;
+    font-weight: bold;
+    font-size: 50;
+    text-align: center;
+}
