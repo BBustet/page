@@ -8,44 +8,100 @@
 
         <script>
             "use strict";
+
+            function fRechnen() {
+                var vZahl;
+                var vAusgabe = "1";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+            function f1() {
+                var vZahl = vZahl + 1;
+
+                var vAusgabe = vAusgabe + "1";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+                console.log("vAusgabe");
+            }
+
+            function f2() {
+                var vZahl = vZahl + 2;
+                var vAusgabe = vAusgabe + 2;
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+                console.log("vAusgabe")
+            }
+
+            function f3() {
+                var vZahl = vZahl + 3;
+
+                var vAusgabe = vAusgabe + "3";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+            function f4() {
+                var vZahl = vZahl + 4;
+
+                vAusgabe = vAusgabe + "4";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+            function f5() {
+                var vZahl = vZahl + 5;
+                var vAusgabe = vAusgabe + 5;
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+            function f6() {
+                var vZahl = vZahl + 6;
+                var vAusgabe = vAusgabe + 6;
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+            function f7() {
+                var vZahl = vZahl + 7;
+                var vAusgabe = vAusgabe + 7;
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+
+
         </script>
 
     </head>
 
-    <body>
+    <body onload="fRechnen();">
         <h1>Rechner</h1>
         <table border="1" class="Rechner">
             <tr>
                 <th colspan="4" style="height: 100px;">
-                    <div id="idAusgabe"></div>
+                    <div id="idAusgabe">01234567,89</div>
                 </th>
             </tr>
             <tr>
+                <td><button class="Rechenoperator" onclick="();"></button></td>
                 <td><button class="Rechenoperator" onclick="();">/</button></td>
                 <td><button class="Rechenoperator" onclick="();">*</button></td>
                 <td><button class="Rechenoperator" onclick="();">-</button></td>
-                <td><button class="Rechenoperator" onclick="();">+</button></td>
             </tr>
             <tr>
-                <td><button class="Zahl" onclick="();">7</button></td>
-                <td><button class="Zahl" onclick="();">8</button></td>
-                <td><button class="Zahl" onclick="();">9</button></td>
-                <td rowspan="2"><button class="Rechenoperator2" onclick="();"></button></td>
+                <td><button class="Zahl" onclick="f7();">7</button></td>
+                <td><button class="Zahl" onclick="f8();">8</button></td>
+                <td><button class="Zahl" onclick="f9();">9</button></td>
+                <td rowspan="2"><button class="Rechenoperator2" onclick="();">+</button></td>
             </tr>
             <tr>
-                <td><button class="Zahl" onclick="();">4</button></td>
-                <td><button class="Zahl" onclick="();">5</button></td>
-                <td><button class="Zahl" onclick="();">6</button></td>
+                <td><button class="Zahl" onclick="fRechnen(); f4();">4</button></td>
+                <td><button class="Zahl" onclick="f5();">5</button></td>
+                <td><button class="Zahl" onclick="f6();">6</button></td>
             </tr>
             <tr>
-                <td><button class="Zahl" onclick="();">1</button></td>
-                <td><button class="Zahl" onclick="();">2</button></td>
-                <td><button class="Zahl" onclick="();">3</button></td>
+                <td><button class="Zahl" onclick="f1();">1</button></td>
+                <td><button class="Zahl" onclick="f2();">2</button></td>
+                <td><button class="Zahl" onclick="f3();">3</button></td>
                 <td rowspan="2"><button class="Rechenoperator2" onclick="();">=</button></td>
             </tr>
             <tr>
                 <td><button class="Rechenoperator" onclick="();">(-)</button></td>
-                <td><button class="Zahl" onclick="();">0</button></td>
+                <td><button class="Zahl" onclick="f0();">0</button></td>
                 <td><button class="Rechenoperator" onclick="();">,</button></td>
             </tr>
         </table>

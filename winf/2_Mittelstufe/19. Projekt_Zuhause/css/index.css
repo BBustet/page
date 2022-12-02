@@ -1,3 +1,13 @@
+body {
+    background-color: black;
+    color: white;
+}
+
+button {
+    background-color: dimgray;
+    color: white;
+}
+
 .Rechner {
     border: 1;
     width: 400px;
@@ -8,12 +18,28 @@ tr {
     width: 400px;
 }
 
+#idAusgabe {
+    height: 97px;
+    width: 386px;
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    font-size: 75px;
+    text-align: right;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
 .Zahl {
     width: 100px;
     height: 100px;
     font-weight: bold;
     font-size: 50;
     text-align: center;
+}
+
+button:active {
+    color: greenyellow;
 }
 
 .Rechenoperator {

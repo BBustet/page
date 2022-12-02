@@ -3,6 +3,13 @@ body {
     font-family: "Varela Round";
 }
 
+.Ausgabefeld {
+    background-color: lightgrey;
+    color: white;
+    font-size: 75px;
+    margin: 50px;
+}
+
 .center {
     text-align: center;
 }
