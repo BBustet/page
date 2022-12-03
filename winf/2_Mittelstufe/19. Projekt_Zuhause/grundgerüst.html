@@ -9,16 +9,20 @@
         <script>
             "use strict";
 
-            function fRechnen() {
+            var vZahl;
+            var vAusgabe
+
+            function fRechnn() {
                 var vZahl;
                 var vAusgabe = "1";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
-            function f1() {
-                var vZahl = vZahl + 1;
+            document.getElementById("idbon").onclick = function f1() {
+                alert("hallo");
+                vZahl = vZahl + 1;
 
-                var vAusgabe = vAusgabe + "1";
+                vAusgabe = vAusgabe + "1";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
                 console.log("vAusgabe");
             }
@@ -70,6 +74,8 @@
 
     <body onload="fRechnen();">
         <h1>Rechner</h1>
+        <input id="idbutton" type="submit" name="button" value="enter" />
+
         <table border="1" class="Rechner">
             <tr>
                 <th colspan="4" style="height: 100px;">
@@ -94,9 +100,9 @@
                 <td><button class="Zahl" onclick="f6();">6</button></td>
             </tr>
             <tr>
-                <td><button class="Zahl" onclick="f1();">1</button></td>
-                <td><button class="Zahl" onclick="f2();">2</button></td>
-                <td><button class="Zahl" onclick="f3();">3</button></td>
+                <td><button class="Zahl" id="idB1">1</button></td>
+                <td><button class="Zahl" id="idB2" onclick="f2();">2</button></td>
+                <td><button class="Zahl" id="idB3" onclick="f3();">3</button></td>
                 <td rowspan="2"><button class="Rechenoperator2" onclick="();">=</button></td>
             </tr>
             <tr>
