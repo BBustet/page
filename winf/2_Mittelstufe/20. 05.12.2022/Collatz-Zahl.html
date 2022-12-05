@@ -2,41 +2,22 @@
 
     <head>
         <title>Titel</title>
+        <von Christian>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+            <script>
+                "use strict";
 
-        <script>
-            "use strict";
+                function fRechnen() {
+                    var vCZ;
+                    var vAusgabe;
+                    var vAB = 0;
 
-            function fRechnen() {
-                var vCZ;
-                var vAusgabe;
-                var vAB = 0;
+                    vCZ = document.getElementById("idCZ").value;
 
-                vCZ = document.getElementById("idCZ").value;
+                    parseFloat(vCZ);
 
-                parseFloat(vCZ);
-
-                vAusgabe = "";
-
-                if (vCZ > 1) {
-                    vAusgabe = vAusgabe + vCZ + " -> ";
-                } else {
-                    vAusgabe = vAusgabe + vCZ;
-                }
-
-                document.getElementById("idAusgabe").innerHTML = vAusgabe;
-
-                while (vCZ > 1) {
-                    if (vCZ % 2 == 0) {
-                        vCZ = parseFloat(vCZ) / 2;
-                    } else {
-                        vCZ = parseFloat(vCZ) * 3 + 1;
-                    }
-
-                    parseFloat("vCZ");
-
-                    vAB = vAB + 1;
+                    vAusgabe = "";
 
                     if (vCZ > 1) {
                         vAusgabe = vAusgabe + vCZ + " -> ";
@@ -45,14 +26,33 @@
                     }
 
                     document.getElementById("idAusgabe").innerHTML = vAusgabe;
+
+                    while (vCZ > 1) {
+                        if (vCZ % 2 == 0) {
+                            vCZ = parseFloat(vCZ) / 2;
+                        } else {
+                            vCZ = parseFloat(vCZ) * 3 + 1;
+                        }
+
+                        parseFloat("vCZ");
+
+                        vAB = vAB + 1;
+
+                        if (vCZ > 1) {
+                            vAusgabe = vAusgabe + vCZ + " -> ";
+                        } else {
+                            vAusgabe = vAusgabe + vCZ;
+                        }
+
+                        document.getElementById("idAusgabe").innerHTML = vAusgabe;
+                    }
+
+                    vAusgabe = vAusgabe + "<br/><br/> Anzahl Berechnungen: " + vAB;
+                    document.getElementById("idAusgabe").innerHTML = vAusgabe;
+
                 }
 
-                vAusgabe = vAusgabe + "<br/><br/> Anzahl Berechnungen: " + vAB;
-                document.getElementById("idAusgabe").innerHTML = vAusgabe;
-
-            }
-
-        </script>
+            </script>
 
     </head>
 
