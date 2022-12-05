@@ -18,7 +18,12 @@
                 parseFloat(vCZ);
 
                 vAusgabe = "";
-                vAusgabe = vAusgabe + vCZ + " -> ";
+
+                if (vCZ > 1) {
+                    vAusgabe = vAusgabe + vCZ + " -> ";
+                } else {
+                    vAusgabe = vAusgabe + vCZ;
+                }
 
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
 
