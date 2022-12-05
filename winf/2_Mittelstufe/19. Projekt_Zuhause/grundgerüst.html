@@ -10,34 +10,39 @@
             "use strict";
 
             var vZahl;
-            var vAusgabe
+            var vAusgabe = "";
 
-            function fRechnn() {
-                var vZahl;
-                var vAusgabe = "1";
+            function fRechnen() {
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
-            document.getElementById("idbon").onclick = function f1() {
-                alert("hallo");
-                vZahl = vZahl + 1;
+            function f0() {
+                var vZahl = vZahl + 0;
+
+                vAusgabe = vAusgabe + "0";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+            function f1() {
+                var vZahl = vZahl + 1;
 
                 vAusgabe = vAusgabe + "1";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
-                console.log("vAusgabe");
             }
+
 
             function f2() {
                 var vZahl = vZahl + 2;
-                var vAusgabe = vAusgabe + 2;
+
+                vAusgabe = vAusgabe + "2";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
-                console.log("vAusgabe")
             }
+
 
             function f3() {
                 var vZahl = vZahl + 3;
 
-                var vAusgabe = vAusgabe + "3";
+                vAusgabe = vAusgabe + "3";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
@@ -50,19 +55,43 @@
 
             function f5() {
                 var vZahl = vZahl + 5;
-                var vAusgabe = vAusgabe + 5;
+
+                vAusgabe = vAusgabe + "5";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function f6() {
                 var vZahl = vZahl + 6;
-                var vAusgabe = vAusgabe + 6;
+
+                vAusgabe = vAusgabe + "6";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function f7() {
                 var vZahl = vZahl + 7;
-                var vAusgabe = vAusgabe + 7;
+
+                vAusgabe = vAusgabe + "7";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+            function f8() {
+                var vZahl = vZahl + 8;
+
+                vAusgabe = vAusgabe + "8";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+            function f9() {
+                var vZahl = vZahl + 9;
+
+                vAusgabe = vAusgabe + "9";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+            function fRoK() {
+                vZahl = vZahl + ".";
+
+                vAusgabe = vAusgabe + ".";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
@@ -100,7 +129,7 @@
                 <td><button class="Zahl" onclick="f6();">6</button></td>
             </tr>
             <tr>
-                <td><button class="Zahl" id="idB1">1</button></td>
+                <td><button class="Zahl" id="idB1" onclick="f1();">1</button></td>
                 <td><button class="Zahl" id="idB2" onclick="f2();">2</button></td>
                 <td><button class="Zahl" id="idB3" onclick="f3();">3</button></td>
                 <td rowspan="2"><button class="Rechenoperator2" onclick="();">=</button></td>
@@ -108,7 +137,7 @@
             <tr>
                 <td><button class="Rechenoperator" onclick="();">(-)</button></td>
                 <td><button class="Zahl" onclick="f0();">0</button></td>
-                <td><button class="Rechenoperator" onclick="();">,</button></td>
+                <td><button class="Rechenoperator" onclick="fRoK();">,</button></td>
             </tr>
         </table>
     </body>
