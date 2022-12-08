@@ -8,6 +8,67 @@ button {
     color: white;
 }
 
+button:active {
+    color: greenyellow;
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: 
+    "output output output output"
+    "kp divide multiply minus"
+    "seven eight nine plus"
+    "four five six plus"
+    "one two three equal"
+    "negative null comma equal";
+}
+
+.null {
+    grid-area null;
+}
+
+.one {
+    grid-area: one;
+}
+
+.two {
+    grid-area two;
+}
+
+.three {
+    grid-area three;
+}
+
+.four {
+    grid-area four;
+}
+
+.five {
+    grid-area five;
+}
+
+.six {
+    grid-area six;
+}
+
+.seven {
+    grid-area eight;
+}
+
+.eight {
+    grid-area nine;
+}
+
+.nine {
+    grid-area two;
+}
+
+
+
+
+/*
 .Rechner {
     border: 1;
     width: 400px;
@@ -38,10 +99,6 @@ tr {
     text-align: center;
 }
 
-button:active {
-    color: greenyellow;
-}
-
 .Rechenoperator {
     width: 100px;
     height: 100px;
@@ -57,3 +114,4 @@ button:active {
     font-size: 50;
     text-align: center;
 }
+*/
