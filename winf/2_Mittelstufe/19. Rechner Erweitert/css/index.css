@@ -36,15 +36,15 @@ button:active {
 .Rechner {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(4, 100px);
+    grid-template-columns: 100px 7px repeat(4, 100px);
     grid-template-rows: repeat(6, 100px);
     grid-template-areas:
-        "output output output output"
-        "clear-all divide multiply minus"
-        "seven eight nine plus"
-        "four five six plus"
-        "one two three equal"
-        "negative null comma equal";
+        "output output output output output output"
+        "twosqrd nothing clear-all divide multiply minus"
+        "tothepower nothing seven eight nine plus"
+        "root nothing four five six plus"
+        "pi nothing one two three equal"
+        "sqrroot nothing negative null comma equal";
     width: fit-content;
     border: solid 3px;
     border-color: lightblue;
@@ -130,6 +130,26 @@ button:active {
     grid-area: clear-all;
 }
 
+.twosqrd {
+    grid-area: twosqrd;
+}
+
+.sqrroot {
+    grid-area: sqrroot;
+}
+
+.root {
+    grid-area: root;
+}
+
+.pi {
+    grid-area: pi;
+}
+
+.tothepower {
+    grid-area: tothepower;
+}
+
 #idAusgabe {
     grid-area: output;
     font-weight: bold;
@@ -152,6 +172,11 @@ button:active {
     font-weight: bold;
     font-size: 50;
     background-color: dim;
+}
+
+.ErwRechnungen {
+    font-weight: bold;
+    font-size: 50;
 }
 
 .equal {
