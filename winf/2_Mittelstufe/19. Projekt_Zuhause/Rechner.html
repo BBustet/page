@@ -9,7 +9,10 @@
         <script>
             "use strict";
 
-            var vZahl;
+            var vZahl1;
+            var vZahl2;
+            var vErgebnis;
+            var vRechnung;
             var vAusgabe = "";
 
             function fRechnen() {
@@ -17,92 +20,125 @@
             }
 
             function f0() {
-                var vZahl = vZahl + 0;
-
                 vAusgabe = vAusgabe + "0";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function f1() {
-                var vZahl = vZahl + 1;
-
                 vAusgabe = vAusgabe + "1";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
 
             function f2() {
-                var vZahl = vZahl + 2;
-
                 vAusgabe = vAusgabe + "2";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
 
             function f3() {
-                var vZahl = vZahl + 3;
-
                 vAusgabe = vAusgabe + "3";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function f4() {
-                var vZahl = vZahl + 4;
-
                 vAusgabe = vAusgabe + "4";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function f5() {
-                var vZahl = vZahl + 5;
-
                 vAusgabe = vAusgabe + "5";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function f6() {
-                var vZahl = vZahl + 6;
-
                 vAusgabe = vAusgabe + "6";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function f7() {
-                var vZahl = vZahl + 7;
-
                 vAusgabe = vAusgabe + "7";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function f8() {
-                var vZahl = vZahl + 8;
-
                 vAusgabe = vAusgabe + "8";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function f9() {
-                var vZahl = vZahl + 9;
-
                 vAusgabe = vAusgabe + "9";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function fRoK() {
-                vZahl = vZahl + ".";
-
                 vAusgabe = vAusgabe + ".";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function fRoM() {
-                vZahl = "-" + vZahl;
-
                 vAusgabe = "-" + vAusgabe;
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
+            function fAC() {
+                vAusgabe = "";
+                vZahl1 = 0;
+                vZahl2 = 0;
+                vRechnung = "";
+                vErgebnis = "";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
 
+            function fPlus() {
+                vZahl1 = vAusgabe;
+                vAusgabe = "";
+                vRechnung = "+";
+                parseFloat(vZahl1);
+                console.log(vZahl1);
+            }
+
+            function fMinus() {
+                vZahl1 = vAusgabe;
+                vAusgabe = "";
+                vRechnung = "-";
+                parseFloat(vZahl1);
+                console.log(vZahl1);
+            }
+
+            function fMultiply() {
+                vZahl1 = vAusgabe;
+                vAusgabe = "";
+                vRechnung = "*";
+                parseFloat(vZahl1);
+                console.log(vZahl1);
+            }
+
+            function fDivide() {
+                vZahl1 = vAusgabe;
+                vAusgabe = "";
+                vRechnung = "/";
+                parseFloat(vZahl1);
+                console.log(vZahl1);
+            }
+
+            function fEqual() {
+                vZahl2 = vAusgabe;
+                vAusgabe = "";
+                parseFloat(vZahl2);
+                if (vRechnung == "+") {
+                    vErgebnis = parseFloat(vZahl1) + parseFloat(vZahl2);
+                } else if (vRechnung == "-") {
+                    vErgebnis = parseFloat(vZahl1) - parseFloat(vZahl2);
+                } else if (vRechnung == "*") {
+                    vErgebnis = parseFloat(vZahl1) * parseFloat(vZahl2);
+                } else if (vRechnung == "/") {
+                    vErgebnis = parseFloat(vZahl1) / parseFloat(vZahl2);
+                } else {
+                    vErgebnis = "Error";
+                }
+                document.getElementById("idAusgabe").innerHTML = vErgebnis;
+            }
 
 
         </script>
@@ -110,31 +146,29 @@
     </head>
 
     <body onload="fRechnen();">
-        <h1>Rechner</h1>
-        <input id="idbutton" type="submit" name="button" value="enter" />
-
-        <div class="grid">
-            <div class="output">01234567,89</div>
-            <button class="Zahl null" onclick="f0();">0</button>
-            <button class="Zahl one" id="idB1" onclick="f1();">1</button>
-            <button class="Zahl two" id="idB2" onclick="f2();">2</button>
-            <button class="Zahl three" id="idB3" onclick="f3();">3</button>
-            <button class="Zahl four" onclick="f4();">4</button>
-            <button class="Zahl five" onclick="f5();">5</button>
-            <button class="Zahl six" onclick="f6();">6</button>
-            <button class="Zahl seven" onclick="f7();">7</button>
-            <button class="Zahl eight" onclick="f8();">8</button>
-            <button class="Zahl nine" onclick="f9();">9</button>
-            <button class="Rechenoperator plus" onclick="();">+</button>
-            <button class="Rechenoperator minus" onclick="();">-</button>
-            <button class="Rechenoperator multiply" onclick="();">*</button>
-            <button class="Rechenoperator divide" onclick="();">/</button>
-            <button class="Rechenoperator kp" onclick="();"></button>
-            <button class="Rechenoperator equal" onclick="();">=</button>
-            <button class="Rechenoperator negative" onclick="fRoM();">(-)</button>
-            <button class="Rechenoperator comma" onclick="fRoK();">,</button>
-        </div>
-
+        <section id="sRechner">
+            <div class="Rechner">
+                <div id="idAusgabe">01234567,89</div>
+                <button class="Zahl null" onclick="f0();">0</button>
+                <button class="Zahl one" id="idB1" onclick="f1();">1</button>
+                <button class="Zahl two" id="idB2" onclick="f2();">2</button>
+                <button class="Zahl three" id="idB3" onclick="f3();">3</button>
+                <button class="Zahl four" onclick="f4();">4</button>
+                <button class="Zahl five" onclick="f5();">5</button>
+                <button class="Zahl six" onclick="f6();">6</button>
+                <button class="Zahl seven" onclick="f7();">7</button>
+                <button class="Zahl eight" onclick="f8();">8</button>
+                <button class="Zahl nine" onclick="f9();">9</button>
+                <button class="Rechenoperator plus" onclick="fPlus();">+</button>
+                <button class="Rechenoperator minus" onclick="fMinus();">-</button>
+                <button class="Rechenoperator multiply" onclick="fMultiply();">*</button>
+                <button class="Rechenoperator divide" onclick="fDivide();">/</button>
+                <button class="Rechenoperator clear-all" onclick="fAC();">AC</button>
+                <button class="Rechenoperator equal" onclick="fEqual();">=</button>
+                <button class="Rechenoperator negative" onclick="fRoM();">(-)</button>
+                <button class="Rechenoperator comma" onclick="fRoK();">,</button>
+            </div>
+        </section>
         <!--
         <table border="1" class="Rechner">
             <tr>

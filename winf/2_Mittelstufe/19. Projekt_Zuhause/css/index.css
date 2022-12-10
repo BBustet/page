@@ -1,32 +1,49 @@
 body {
     background-color: black;
     color: white;
+    font-family: Arial;
 }
 
 button {
     background-color: dimgray;
     color: white;
+    border: solid 2;
+    border-color: #333333;
+    border-radius: 15px;
 }
 
 button:active {
     color: greenyellow;
 }
 
-.grid {
+#sRechner {
+    height: 100%;
+    width: 100%;
+}
+
+.Rechner {
     display: grid;
     gap: 10px;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-areas: 
-    "output output output output"
-    "kp divide multiply minus"
-    "seven eight nine plus"
-    "four five six plus"
-    "one two three equal"
-    "negative null comma equal";
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(6, 100px);
+    grid-template-areas:
+        "output output output output"
+        "clear-all divide multiply minus"
+        "seven eight nine plus"
+        "four five six plus"
+        "one two three equal"
+        "negative null comma equal";
+    width: fit-content;
+    border: solid 3px;
+    border-color: lightblue;
+    border-radius: 15px;
+    padding: 10px;
+    margin: auto;
+    background-color: #333333;
 }
 
 .null {
-    grid-area null;
+    grid-area: null;
 }
 
 .one {
@@ -34,39 +51,90 @@ button:active {
 }
 
 .two {
-    grid-area two;
+    grid-area: two;
 }
 
 .three {
-    grid-area three;
+    grid-area: three;
 }
 
 .four {
-    grid-area four;
+    grid-area: four;
 }
 
 .five {
-    grid-area five;
+    grid-area: five;
 }
 
 .six {
-    grid-area six;
+    grid-area: six;
 }
 
 .seven {
-    grid-area eight;
+    grid-area: seven;
 }
 
 .eight {
-    grid-area nine;
+    grid-area: eight;
 }
 
 .nine {
-    grid-area two;
+    grid-area: nine;
 }
 
+.plus {
+    grid-area: plus;
+}
 
+.minus {
+    grid-area: minus;
+}
 
+.multiply {
+    grid-area: multiply;
+}
+
+.divide {
+    grid-area: divide;
+}
+
+.equal {
+    grid-area: equal;
+}
+
+.negative {
+    grid-area: negative;
+}
+
+.comma {
+    grid-area: comma;
+}
+
+.clear-all {
+    grid-area: clear-all;
+}
+
+#idAusgabe {
+    grid-area: output;
+    font-weight: bold;
+    background-color: gray;
+    color: white;
+    font-size: 75px;
+    text-align: right;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius: 15px;
+}
+
+.Zahl {
+    font-weight: bold;
+    font-size: 50;
+}
+
+.Rechenoperator {
+    font-weight: bold;
+    font-size: 50;
+}
 
 /*
 .Rechner {
@@ -79,39 +147,9 @@ tr {
     width: 400px;
 }
 
-#idAusgabe {
-    height: 97px;
-    width: 386px;
-    font-weight: bold;
-    background-color: gray;
-    color: white;
-    font-size: 75px;
-    text-align: right;
-    padding-right: 15px;
-    padding-left: 15px;
-}
 
-.Zahl {
-    width: 100px;
-    height: 100px;
-    font-weight: bold;
-    font-size: 50;
-    text-align: center;
-}
 
-.Rechenoperator {
-    width: 100px;
-    height: 100px;
-    font-weight: bold;
-    font-size: 50;
-    text-align: center;
-}
 
-.Rechenoperator2 {
-    width: 100px;
-    height: 206px;
-    font-weight: bold;
-    font-size: 50;
-    text-align: center;
-}
+
+
 */
