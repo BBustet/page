@@ -46,9 +46,9 @@ button:active {
         "output output output output output output"
         "twosqrd nothing clear-all divide multiply minus"
         "tothepower nothing seven eight nine plus"
-        "root nothing four five six plus"
-        "pi nothing one two three equal"
-        "sqrroot nothing negative null comma equal";
+        "sqrroot nothing four five six plus"
+        "root nothing one two three equal"
+        "pi nothing negative null comma equal";
     width: fit-content;
     border: solid 3px;
     border-color: lightblue;

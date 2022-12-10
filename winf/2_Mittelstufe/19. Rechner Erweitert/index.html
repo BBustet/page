@@ -9,7 +9,8 @@
         <script>
             "use strict";
 
-            var vZahl1;
+            var vPi;
+            var vZahl1 = 0;
             var vZahl2;
             var vErgebnis;
             var vZErgebnis;
@@ -100,15 +101,25 @@
                 vZahl2 = 0;
                 vRechnung = "";
                 vErgebnis = "";
+                vZErgebnis = "";
+                vPi = "";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function fPlus() {
                 if (vErgebnis == "-0") {
                     vZahl1 = vZErgebnis;
+                } else if (vAusgabe == "𝝅") {
+                    vZahl1 = Math.PI;
+                } else if (vPi == "true") {
+                    vZahl1 = parseFloat(vAusgabe) * Math.PI;
+                } else if (vZahl1 != 0) {
+                    vZahl1 = vZahl1;
                 } else {
                     vZahl1 = vAusgabe;
                 }
+
+                vPi = "";
                 vAusgabe = "";
                 vRechnung = "+";
                 parseFloat(vZahl1);
@@ -118,9 +129,17 @@
             function fMinus() {
                 if (vErgebnis == "-0") {
                     vZahl1 = vZErgebnis;
+                } else if (vAusgabe == "𝝅") {
+                    vZahl1 = Math.PI;
+                } else if (vPi == "true") {
+                    vZahl1 = parseFloat(vAusgabe) * Math.PI;
+                } else if (vZahl1 != 0) {
+                    vZahl1 = vZahl1;
                 } else {
                     vZahl1 = vAusgabe;
                 }
+
+                vPi = "";
                 vAusgabe = "";
                 vRechnung = "-";
                 parseFloat(vZahl1);
@@ -130,9 +149,17 @@
             function fMultiply() {
                 if (vErgebnis == "-0") {
                     vZahl1 = vZErgebnis;
+                } else if (vAusgabe == "𝝅") {
+                    vZahl1 = Math.PI;
+                } else if (vPi == "true") {
+                    vZahl1 = parseFloat(vAusgabe) * Math.PI;
+                } else if (vZahl1 != 0) {
+                    vZahl1 = vZahl1;
                 } else {
                     vZahl1 = vAusgabe;
                 }
+
+                vPi = "";
                 vAusgabe = "";
                 vRechnung = "*";
                 parseFloat(vZahl1);
@@ -142,18 +169,100 @@
             function fDivide() {
                 if (vErgebnis == "-0") {
                     vZahl1 = vZErgebnis;
+                } else if (vAusgabe == "𝝅") {
+                    vZahl1 = Math.PI;
+                } else if (vPi == "true") {
+                    vZahl1 = parseFloat(vAusgabe) * Math.PI;
+                } else if (vZahl1 != 0) {
+                    vZahl1 = vZahl1;
                 } else {
                     vZahl1 = vAusgabe;
                 }
+
+                vPi = "";
                 vAusgabe = "";
                 vRechnung = "/";
                 parseFloat(vZahl1);
                 console.log(vZahl1);
             }
 
+            function fTwosqrd() {
+                if (vErgebnis == "-0") {
+                    vZahl1 = vZErgebnis;
+                } else {
+                    vZahl1 = vAusgabe;
+                }
+                vAusgabe = "";
+                vErgebnis = parseFloat(vZahl1) * parseFloat(vZahl1);
+                document.getElementById("idAusgabe").innerHTML = vErgebnis;
+                vZErgebnis = vErgebnis;
+                vErgebnis = "-0";
+            }
+
+            function fTothepower() {
+                if (vErgebnis == "-0") {
+                    vAusgabe = vZErgebnis + "^";
+                } else {
+                    vAusgabe = vAusgabe + "^";
+                }
+                vZahl1 = vAusgabe;
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+                vAusgabe = "";
+                vRechnung = "^";
+                parseFloat(vZahl1);
+                console.log(vZahl1);
+            }
+
+            function fSqrt() {
+                if (vErgebnis == "-0") {
+                    vZahl1 = vZErgebnis;
+                } else {
+                    vZahl1 = vAusgabe;
+                }
+                vAusgabe = "";
+                vErgebnis = Math.sqrt(vZahl1);
+                document.getElementById("idAusgabe").innerHTML = vErgebnis;
+                vZErgebnis = vErgebnis;
+                vErgebnis = "-0";
+            }
+
+            function fRoot() {
+                if (vErgebnis == "-0") {
+                    vAusgabe = vZErgebnis + "√";
+                } else {
+                    vAusgabe = vAusgabe + "√";
+                }
+                vZahl1 = vAusgabe;
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+                vAusgabe = "";
+                vRechnung = "√";
+                parseFloat(vZahl1);
+            }
+
+            function fPi() {
+                vAusgabe = vAusgabe + "𝝅";
+                vErgebnis = "";
+                vPi = "true";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
             function fEqual() {
-                vZahl2 = vAusgabe;
+                if (vErgebnis == "-0") {
+                    vZahl1 = vZErgebnis;
+                } else if (vAusgabe == "𝝅") {
+                    vZahl1 = vZahl1;
+                    vZahl2 = Math.PI;
+                } else if (vPi == "true") {
+                    vZahl1 = vZahl1;
+                    vZahl2 = parseFloat(vAusgabe) * Math.PI;
+                } else {
+                    vZahl1 = vZahl1;
+                    vZahl2 = vAusgabe;
+                }
+
+                parseFloat(vZahl1);
                 parseFloat(vZahl2);
+
                 if (vRechnung == "+") {
                     vErgebnis = parseFloat(vZahl1) + parseFloat(vZahl2);
                 } else if (vRechnung == "-") {
@@ -162,15 +271,21 @@
                     vErgebnis = parseFloat(vZahl1) * parseFloat(vZahl2);
                 } else if (vRechnung == "/") {
                     vErgebnis = parseFloat(vZahl1) / parseFloat(vZahl2);
+                } else if (vRechnung == "^") {
+                    vErgebnis = Math.pow(parseFloat(vZahl1), parseFloat(vZahl2));
+                } else if (vRechnung == "√") {
+                    vZahl1 = 1 / parseFloat(vZahl1)
+                    vErgebnis = Math.pow(parseFloat(vZahl2), parseFloat(vZahl1));
                 } else {
                     vErgebnis = "Error";
                 }
 
-
+                vPi = "";
                 vZErgebnis = vErgebnis;
                 vAusgabe = "";
                 document.getElementById("idAusgabe").innerHTML = vErgebnis;
                 vErgebnis = "-0";
+                vZahl1 = 0;
             }
 
 
@@ -201,11 +316,11 @@
                 <button class="Rechenoperator negative" onclick="fRoM();">(-)</button>
                 <button class="Rechenoperator comma" onclick="fRoK();">,</button>
                 <div class="nothing"></div>
-                <button class="ErwRechnungen twosqrd" onclick="();">x<sup>2</sup></button>
-                <button class="ErwRechnungen tothepower" onclick="();">x<sup>y</sup></button>
-                <button class="ErwRechnungen sqrroot" onclick="();"><sup>2</sup>√x</button>
-                <button class="ErwRechnungen root" onclick="();"><sup>x</sup>√y</button>
-                <button class="ErwRechnungen pi" onclick="();">𝝅</button>
+                <button class="ErwRechnungen twosqrd" onclick="fTwosqrd();">x<sup>2</sup></button>
+                <button class="ErwRechnungen tothepower" onclick="fTothepower();">x<sup>y</sup></button>
+                <button class="ErwRechnungen sqrroot" onclick="fSqrt();"><sup>2</sup>√x</button>
+                <button class="ErwRechnungen root" onclick="fRoot();"><sup>x</sup>√y</button>
+                <button class="ErwRechnungen pi" onclick="fPi();">𝝅</button>
 
                 <!--   
                 <button class="ErwRechnungen " onclick="();"></button>
