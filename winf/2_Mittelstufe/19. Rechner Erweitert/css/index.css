@@ -20,6 +20,10 @@ button:active {
     color: lightblue;
 }
 
+.ErwRechnungen:active {
+    color: lightblue;
+}
+
 .equal:active {
     color: goldenrod;
 }
@@ -171,7 +175,6 @@ button:active {
 .Rechenoperator {
     font-weight: bold;
     font-size: 50;
-    background-color: dim;
 }
 
 .ErwRechnungen {
