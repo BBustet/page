@@ -9,9 +9,10 @@
         <script>
             "use strict";
 
-            var vZahl1;
-            var vZahl2;
+            var vZahl1 = 0;
+            var vZahl2 = 0;
             var vErgebnis;
+            var vZErgebnis;
             var vRechnung = "";
             var vAusgabe = "";
 
@@ -99,15 +100,19 @@
                 vZahl2 = 0;
                 vRechnung = "";
                 vErgebnis = "";
+                vZErgebnis = "";
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
 
             function fPlus() {
-                if (vErgebnis != 0) {
-                    vZahl1 = vErgebnis;
+                if (vErgebnis == "-0") {
+                    vZahl1 = vZErgebnis;
+                } else if (vZahl1 != 0) {
+                    vZahl1 = vZahl1;
                 } else {
                     vZahl1 = vAusgabe;
                 }
+
                 vAusgabe = "";
                 vRechnung = "+";
                 parseFloat(vZahl1);
@@ -115,11 +120,14 @@
             }
 
             function fMinus() {
-                if (vErgebnis != 0) {
-                    vZahl1 = vErgebnis;
+                if (vErgebnis == "-0") {
+                    vZahl1 = vZErgebnis;
+                } else if (vZahl1 != 0) {
+                    vZahl1 = vZahl1;
                 } else {
                     vZahl1 = vAusgabe;
                 }
+
                 vAusgabe = "";
                 vRechnung = "-";
                 parseFloat(vZahl1);
@@ -127,8 +135,10 @@
             }
 
             function fMultiply() {
-                if (vErgebnis != 0) {
-                    vZahl1 = vErgebnis;
+                if (vErgebnis == "-0") {
+                    vZahl1 = vZErgebnis;
+                } else if (vZahl1 != 0) {
+                    vZahl1 = vZahl1;
                 } else {
                     vZahl1 = vAusgabe;
                 }
@@ -139,11 +149,14 @@
             }
 
             function fDivide() {
-                if (vErgebnis != 0) {
-                    vZahl1 = vErgebnis;
+                if (vErgebnis == "-0") {
+                    vZahl1 = vZErgebnis;
+                } else if (vZahl1 != 0) {
+                    vZahl1 = vZahl1;
                 } else {
                     vZahl1 = vAusgabe;
                 }
+
                 vAusgabe = "";
                 vRechnung = "/";
                 parseFloat(vZahl1);
@@ -151,8 +164,16 @@
             }
 
             function fEqual() {
-                vZahl2 = vAusgabe;
+                if (vErgebnis == "-0") {
+                    vZahl1 = vZErgebnis;
+                } else {
+                    vZahl1 = vZahl1;
+                    vZahl2 = vAusgabe;
+                }
+
+                parseFloat(vZahl1);
                 parseFloat(vZahl2);
+
                 if (vRechnung == "+") {
                     vErgebnis = parseFloat(vZahl1) + parseFloat(vZahl2);
                 } else if (vRechnung == "-") {
@@ -164,8 +185,12 @@
                 } else {
                     vErgebnis = "Error";
                 }
+
+                vZErgebnis = vErgebnis;
                 vAusgabe = "";
                 document.getElementById("idAusgabe").innerHTML = vErgebnis;
+                vErgebnis = "-0";
+                vZahl1 = 0;
             }
 
 
