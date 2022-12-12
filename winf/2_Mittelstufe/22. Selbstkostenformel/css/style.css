@@ -1,0 +1,68 @@
+body {
+    background-color: black;
+    color: white;
+    font-family: arial;
+}
+
+input {
+    background-color: rgba(128, 255, 128, 0.237);
+    color: white;
+    border: solid 1px;
+    border-color: lightgrey;
+    border-radius: 5px;
+    text-align: right;
+    width: 75px;
+}
+
+th {
+    text-align: left;
+    height: 30px;
+    width: 200px;
+    background-color: rgb(66, 66, 66);
+}
+
+td {
+    text-align: right;
+    height: 30px;
+    width: 110px;
+    background-color: rgb(103, 103, 103);
+}
+
+.inputfelder {
+    background-color: rgb(92, 92, 92);
+    width: fit-content;
+    height: fit-content;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+button {
+    border: inset 4px;
+    border-radius: 7px;
+    background-color: rgb(198, 195, 195);
+}
+
+.grid {
+    display: grid;
+    gap: 10px;
+    border: outset 3px;
+    border-color: grey;
+    grid-template-columns: fit-content fit-content;
+    grid-template-rows: fit-content fit-content;
+    grid-template-areas:
+        "first second"
+        "third 0";
+}
+
+.first {
+    grid-area: first;
+    font-size: 17px;
+}
+
+.second {
+    grid-area: second;
+}
+
+.third {
+    grid-area: third;
+}
