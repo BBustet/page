@@ -1,0 +1,61 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+            function fRechnen() {
+                var vZahlstart;
+                var vZahlende;
+                var vZahlaktuell;
+                var vZahlquadrat;
+                var vZahlsumme;
+                var vOutput;
+                var vTeiler
+
+                vZahlstart = document.getElementById("idInputStart").value;
+                vZahlende = document.getElementById("idInputEnde").value;
+                vTeiler = document.getElementById("idTeiler").value;
+
+                vZahlaktuell = vZahlstart;
+
+                vOutput = "<table border = 1><tr><th>Zahl</th><th>Quadrat</th><th>Summe</th></tr>";
+                document.getElementById("idOutput").innerHTML = vOutput;
+
+                while (vZahlaktuell <= vZahlende) {
+                    vZahlquadrat = parseFloat(vZahlaktuell) * parseFloat(vZahlaktuell);
+                    vZahlsumme = parseFloat(vZahlaktuell) + parseFloat(vZahlquadrat);
+
+                    if (vZahlsumme % vTeiler == 0) {
+                        vOutput = vOutput + "<tr><td>" + vZahlaktuell + "</td><td>" + vZahlquadrat + "</td><td style=background-color:green>" + vZahlsumme + "</td></tr>"
+                    } else {
+                        vOutput = vOutput + "<tr><td>" + vZahlaktuell + "</td><td>" + vZahlquadrat + "</td><td style=background-color:red>" + vZahlsumme + "</td></tr>"
+                    }
+
+
+                    document.getElementById("idOutput").innerHTML = vOutput;
+
+                    vZahlaktuell = parseFloat(vZahlaktuell) + 1;
+                }
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Wertetabelle</h1>
+
+        Start: <input id="idInputStart" type="text" value="2"><br />
+        Ende: <input id="idInputEnde" type="text" value="6"> Summe teilbar durch: <input id="idTeiler" type="text"
+            value="4"> <br />
+        <button onclick="fRechnen();">Berechne die Wertetabelle</button><br />
+        <br />
+        <div id="idOutput">Hier steht gleich die Wertetabelle</div>
+    </body>
+
+</html>
