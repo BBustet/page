@@ -18,14 +18,17 @@ th {
     text-align: left;
     height: 30px;
     width: 200px;
-    background-color: rgb(66, 66, 66);
+    background-color: rgb(92, 92, 92);
 }
 
 td {
     text-align: right;
     height: 30px;
     width: 110px;
-    background-color: rgb(103, 103, 103);
+    background-color: rgb(92, 92, 92);
+}
+
+table {
 }
 
 .inputfelder {
@@ -33,7 +36,13 @@ td {
     width: fit-content;
     height: fit-content;
     padding: 10px;
+    margin-top: -1px;
     border-radius: 10px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-top-left-radius: 12px;
+    border-bottom: 0px;
+    grid-area: erstes;
 }
 
 button {
@@ -46,12 +55,13 @@ button {
     display: grid;
     gap: 10px;
     border: outset 3px;
+    border-bottom: 0px;
     border-color: grey;
     grid-template-columns: fit-content fit-content;
     grid-template-rows: fit-content fit-content;
     grid-template-areas:
         "first second"
-        "third 0";
+        "third third";
 }
 
 .first {
@@ -65,4 +75,33 @@ button {
 
 .third {
     grid-area: third;
+}
+
+.Output {
+    grid-area: zweites;
+    text-align: center;
+    font-style: italic;
+    color: rgb(214, 214, 214);
+    border: outset 3px;
+    border-color: grey;
+    border-top: 0px;
+    border-radius: 0px;
+    padding: 4px;
+    background-color: rgb(92, 92, 92);
+}
+
+.Grid2 {
+    width: fit-content;
+    height: fit-content;
+    display: grid;
+    gap: 0px;
+    border: outset 3px;
+    grid-template-columns: fit-content;
+    grid-template-rows: fit-content fit-content;
+    border-radius: 15px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    grid-template-areas:
+        "erstes"
+        "zweites";
 }

@@ -34,19 +34,35 @@
                 vHandlungskosten = document.getElementById("idHandlungskosten").value;
 
 
-                vOutput = "<table border=1>";
+                vOutput = "<table>";
 
                 vListeneinkaufspreis = parseFloat(vStückzahl) * parseFloat(vListenpreis);
+                vListeneinkaufspreis = vListeneinkaufspreis.toFixed(2);
+
                 vLieferrabatte = parseFloat(vLieferrabatte) / 100 * parseFloat(vListeneinkaufspreis);
-                vZieleinkaufspreis = parseFloat(vListeneinkaufspreis) + parseFloat(vLieferrabatte);
+                vLieferrabatte = vLieferrabatte.toFixed(2);
+
+                vZieleinkaufspreis = parseFloat(vListeneinkaufspreis) - parseFloat(vLieferrabatte);
+                vZieleinkaufspreis = vZieleinkaufspreis.toFixed(2);
+
 
                 vLieferskonto = parseFloat(vLieferskonto) / 100 * parseFloat(vZieleinkaufspreis);
+                vLieferskonto = vLieferskonto.toFixed(2);
+
                 vBareinkaufspreis = parseFloat(vZieleinkaufspreis) - parseFloat(vLieferskonto) + parseFloat(vVertreterprovision);
+                vBareinkaufspreis = vBareinkaufspreis.toFixed(2);
+
 
                 vBezugspreis = parseFloat(vBareinkaufspreis) + parseFloat(vBezugskosten);
+                vBezugspreis = vBezugspreis.toFixed(2);
+
 
                 vHandlungskosten = parseFloat(vHandlungskosten) * parseFloat(vStückzahl);
+                vHandlungskosten = vHandlungskosten.toFixed(2);
+
                 vSelbstkosten = parseFloat(vBezugspreis) + parseFloat(vHandlungskosten);
+                vSelbstkosten = vSelbstkosten.toFixed(2);
+
 
                 vOutput = vOutput + "<tr><th>Listeneinkaufspreis</th><td>" + vListeneinkaufspreis + "€</td></tr>";
                 vOutput = vOutput + "<tr><th>Lieferrabatt</th><td>" + vLieferrabatte + "€</td></tr>";
@@ -60,7 +76,6 @@
                 vOutput = vOutput + "<tr><th>Selbstkosten</th><td>" + vSelbstkosten + "€</td></tr>";
 
                 document.getElementById("idOutput").innerHTML = vOutput;
-                console.log(vSelbstkosten);
             }
 
         </script>
@@ -69,34 +84,36 @@
 
     <body>
         <h1>Selbstkostenberechnung</h1>
-        <section class="inputfelder Grid">
-            <div class="first">Sückzahl:<br />
-                Listenpreis:<br />
-                Lieferrabatte:<br />
-                Lieferskonto:<br />
-                Vertreterprovision:<br />
-                Bezugskosten:<br />
-                Handlungskosten:<br />
-            </div>
-            <div class="second">
-                <input id="idStückzahl" type="text" value="10"> Stück <br />
-                <input id="idListenpreis" type="text" value="100"> € pro Stück <br />
-                <input id="idLieferrabatte" type="text" value="20"> % <br />
-                <input id="idLieferskonto" type="text" value="5"> % <br />
-                <input id="idVertreterprovision" type="text" value="100"> € <br />
-                <input id="idBezugskosten" type="text" value="180"> € <br />
-                <input id="idHandlungskosten" type="text" value="3.5"> € pro Stück <br />
-            </div>
-            <!--
-            <input id="idGewinn" type="text" value="50">% <br />
-            <input id="idKundenskonto" type="text" value="15">% <br />
-            <input id="idVertreterprovision" type="text" value="100">€ <br />
-            <input id="idKundenrabatt" type="text" value="20">% <br />
-            <input id="idMehrwertsteuer" type="text" value="19">% <br />
-            -->
-            <button onclick="fBerechnen();" class="third">Berechnen</button><br />
-        </section>
-        <div id="idOutput"></div>
+        <div class="Grid2">
+            <section class="inputfelder Grid">
+                <div class="first">Sückzahl:<br />
+                    Listenpreis:<br />
+                    Lieferrabatte:<br />
+                    Lieferskonto:<br />
+                    Vertreterprovision:<br />
+                    Bezugskosten:<br />
+                    Handlungskosten:<br />
+                </div>
+                <div class="second">
+                    <input id="idStückzahl" type="text" value="20"> Stück <br />
+                    <input id="idListenpreis" type="text" value="199"> € pro Stück <br />
+                    <input id="idLieferrabatte" type="text" value="11.5"> % <br />
+                    <input id="idLieferskonto" type="text" value="2.5"> % <br />
+                    <input id="idVertreterprovision" type="text" value="0"> € <br />
+                    <input id="idBezugskosten" type="text" value="810.57"> € <br />
+                    <input id="idHandlungskosten" type="text" value="1.5"> € pro Stück <br />
+                </div>
+                <!--
+                <input id="idGewinn" type="text" value="50">% <br />
+                <input id="idKundenskonto" type="text" value="15">% <br />
+                <input id="idVertreterprovision" type="text" value="100">€ <br />
+                <input id="idKundenrabatt" type="text" value="20">% <br />
+                <input id="idMehrwertsteuer" type="text" value="19">% <br />
+                -->
+                <button onclick="fBerechnen();" class="third">Berechnen</button><br />
+            </section>
+            <div id="idOutput" class="Output">Hier steht gleich das Ergebnis</div>
+        </div>
     </body>
 
 </html>
