@@ -1,0 +1,66 @@
+<html>
+
+    <head>
+        <title>Selbstkostenberechnung</title>
+        <code von Christian></code>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+            function fBerechnen() {
+                var vStückzahl;
+                var vListenpreis;
+                var vListeneinkaufspreis;
+                var vLieferrabatte;
+                var vZieleinkaufspreis;
+                var vLieferskonto;
+                var vVertreterprovision;
+                var vBareinkaufspreis;
+                var vBezugskosten;
+                var vBezugspreis;
+                var vHandlungskosten;
+                var vSelbstkosten;
+                var vSelbstkostenST;
+                var vOutput;
+
+                vStückzahl = document.getElementById("idStückzahl").value;
+                vListenpreis = document.getElementById("idStückzahl").value;
+                vLieferrabatte = document.getElementById("idStückzahl").value;
+                vLieferskonto = document.getElementById("idStückzahl").value;
+                vVertreterprovision = document.getElementById("idStückzahl").value;
+                vBezugskosten = document.getElementById("idStückzahl").value;
+                vHandlungskosten = document.getElementById("idStückzahl").value;
+
+                vOutput = "<table border=1>";
+
+                vListeneinkaufspreis = parseFloat(vStückzahl) * parseFloat(vListenpreis);
+                vLieferrabatte = parseFloat(vListeneinkaufspreis) * (parseFloat(vLieferrabatte) / 100);
+                console.log(vLieferrabatte);
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Selbstkostenberechnung</h1>
+        Stückzahl: <input id="idStückzahl" type="text" value="10"> Stück <br />
+        Listenpreis: <input id="idListenpreis" type="text" value="100">€ pro Stück <br />
+        Lieferrabatte: <input id="idLieferrabatte" type="text" value="20">% <br />
+        Lieferskonto: <input id="idLieferskonto" type="text" value="5">% <br />
+        Vertreterprovision: <input id="idVertreterprovision" type="text" value="100">€ <br />
+        Bezugskosten: <input id="idBezugskosten" type="text" value="180">€ <br />
+        Handlungskosten: <input id="idHandlungskosten" type="text" value="3.5">€ pro Stück <br />
+        <!--
+        <input id="idGewinn" type="text" value="50">% <br />
+        <input id="idKundenskonto" type="text" value="15">% <br />
+        <input id="idVertreterprovision" type="text" value="100">€ <br />
+        <input id="idKundenrabatt" type="text" value="20">% <br />
+        <input id="idMehrwertsteuer" type="text" value="19">% <br />
+        -->
+        <button onclick="fBerechnen();">Berechnen</button><br />
+        <div id="idOutput"></div>
+    </body>
+
+</html>
