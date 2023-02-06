@@ -1,0 +1,48 @@
+<html>
+
+    <head>
+        <title>While</title>
+        <!--<code von Christian></code>-->
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+
+            function fZählen() {
+                var vInput;
+                var vOutput;
+
+                vInput = document.getElementById("idInput").value;
+                parseFloat(vInput);
+                vOutput = "";
+                if (vInput <= 100) {
+                    while (vInput <= 100) {
+                        vOutput = vOutput + "<br/>" + vInput;
+
+                        document.getElementById("idOutput").innerHTML = vOutput;
+                        vInput = parseFloat(vInput) + 1;
+                    }
+
+                } else {
+                    while (vInput >= 100) {
+                        vOutput = vOutput + "<br/>" + vInput;
+
+                        document.getElementById("idOutput").innerHTML = vOutput;
+                        vInput = parseFloat(vInput) - 1;
+                    }
+                }
+
+            }
+
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Zähle bis 100</h1>
+        <input id="idInput" type="text" value="43">
+        <button onclick="fZählen();">Zähle bis 100</button>
+        <div id="idOutput"></div>
+    </body>
+
+</html>
