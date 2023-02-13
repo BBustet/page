@@ -7,12 +7,32 @@
 
         <script>
             "use strict";
+
+            function fRechnen() {
+                var vInput;
+                var vOutput;
+
+                vInput = document.getElementById("idInput").value;
+
+                if (vInput % 2 == 0) {
+                    vOutput = "<p style=color:green>Teilbar durch 2</p>";
+                } else {
+                    vOutput = "<p style=color:red>Nicht teilbar durch 2</p>";
+                }
+
+                document.getElementById("idAusgabe").innerHTML = vOutput;
+
+            }
+
         </script>
 
     </head>
 
     <body>
-        <h1>Vorlage</h1>
+        <h1>Teiler</h1>
+        <input id="idInput" type="text" value="10">
+        <button onClick="fRechnen();">Ausrechnen</button>
+        <div id="idAusgabe"></div>
     </body>
 
 </html>
