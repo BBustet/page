@@ -1,0 +1,56 @@
+<html>
+
+	<head>
+		<title>Schreinerei-Kostenfunktion</title>
+	</head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<script>
+		"use strict";
+		function programm() {
+			// Quellcode
+
+			var vMeter = 1;
+			var vAnzahl;
+			var vAusgabe = "";
+			var vKosten;
+
+			vAnzahl = document.getElementById("idAnzahl").value;
+
+			vAusgabe = vAusgabe + "<table border=1>";
+			vAusgabe = vAusgabe + "<tr><th>Meter</td><th>Kosten in Euro</td></tr>";
+
+			document.getElementById("idAusgabe").innerHTML = vAusgabe;
+
+			while (vMeter <= vAnzahl) {
+				vKosten = 50 * (vMeter * vMeter) + (100 * vMeter) + 100;
+				if (vKosten < 500) {
+					vAusgabe = vAusgabe + "<tr style=background-color:red><td>" + vMeter + "</td><td>" + vKosten + "</td></tr>";
+				} else {
+					vAusgabe = vAusgabe + "<tr><td>" + vMeter + "</td><td>" + vKosten + "</td></tr>";
+				}
+				document.getElementById("idAusgabe").innerHTML = vAusgabe;
+
+				vMeter = vMeter + 1;
+			}
+			// Hier das Programm erweitern
+			// für die Darstellung Farbmarkierung: 				   "style=background-color.yellow;"
+
+
+			vAusgabe = vAusgabe + "</table>";
+
+
+		}
+
+	</script>
+
+
+	<body>
+		<h1>Schreinerei Kostenfunktion</h1>
+
+
+		1 m bis <input id="idAnzahl" type="text" value="20">
+		<button onClick="programm();">Wertetabelle erzeugen!</button><br /><br />
+		<div id="idAusgabe"></div>
+	</body>
+
+</html>
