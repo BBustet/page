@@ -1,0 +1,33 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+        <code von Christian></code>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+        <script>
+            "use strict";
+            function fAusgabeAlert() {
+                alert("Hallo Welt");
+            }
+            function fAusgabeConsole() {
+                console.log("Hallo");
+            }
+            function fAusgabeDiv() {
+                var vAusgabe;
+                vAusgabe = "Welt";
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+        </script>
+
+    </head>
+
+    <body>
+        <h1>Ausgaben</h1>
+        <button onclick="fAusgabeAlert();">Ausgabe von Hallo Welt in ein Popup!</button><br />
+        <button onclick="fAusgabeConsole();">Ausgabe von Hallo in die Konsole!</button><br />
+        <button onclick="fAusgabeDiv();">Ausgabe von Welt in div!</button><br />
+        <div id="idAusgabe"></div>
+    </body>
+
+</html>
