@@ -1,0 +1,56 @@
+<html>
+	<head>
+   	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script>
+			"use strict";
+			
+			function fRechnen(){
+				var vg;
+				var vp;
+				var va;
+				var vb;
+				var vA;
+				var vB;
+				var vOutput;
+				var vKA;
+				var vKB;
+				
+				
+				vg = document.getElementById("idInputG").value;
+				vp = document.getElementById("idInputP").value;
+				va = document.getElementById("idInputA").value;
+				vb = document.getElementById("idInputB").value;
+				
+				vA = Math.pow(vg,a) % vp;
+				vB = Math.pow(vg,b) % vp;
+				
+				vKA = Math.pow(vB,va) % vp;
+				vKB = Math.pow(vA,vb) % vp;
+				
+				vOutput = "Alice berechnet A: " + vA + "</br>Bob berechnet B: " + vB + "</br>-----------------------------------------------------</br>Gennerierter Schlüssel K Alice: " + vKA + "</br>Gennerierter Schlüssel K Bob: " + vKB;
+				
+				document.getElementById("idOutput").innerHTML = vOutput;
+				
+			}
+			
+		</script>
+	</head>
+	<body>
+	
+		<h1>Berechnung von Schlüssel K</h1>
+		1. Alice und Bob einigen sich auf:</br>
+		g = <input id="idInputG" type="text" value="2"></br>
+		p = <input id="idInputP" type="text" value="13"></br>
+		</br>
+		-----------------------------------------------------</br>
+		</br>
+		2. Alice wählt die Geheime Zahl a:</br>
+		a = <input id="idInputA" type="text" value="5"></br>
+		3. Bob wählt die Geheime Zahl b:</br>
+		b = <input id="idInputB" type="text" value="8"></br>
+		</br>
+		<button onClick="fRechnen();">Berechne Schlüssel</button></br>
+		</br>
+		<div id="idOutput">Hier kommt das Ergebnis</div>
+	</body>
+</html>
