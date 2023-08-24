@@ -1,0 +1,16 @@
+body {
+    background-color: rgb(54, 54, 54);
+    color: white;
+}
+
+table {
+    text-align: left;
+}
+
+a {
+    color: rgb(0, 163, 163);
+}
+
+.linkeSp {
+    width: 90px;
+}
