@@ -1,7 +1,17 @@
-body {
-    background-color: black;
+h1 {
+    font-weight: bolder;
 }
 
-h1 {
-    color: red;
+h5 {
+    background-color: red;
+    color: white;
+}
+
+p {
+    font-weight: bold;
+    font-style: italic;
+}
+
+table {
+    text-align: center;
 }
