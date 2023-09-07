@@ -15,3 +15,7 @@ p {
 table {
     text-align: center;
 }
+
+img {
+    height: 80px;
+}
