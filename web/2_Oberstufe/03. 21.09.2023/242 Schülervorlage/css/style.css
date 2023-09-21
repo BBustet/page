@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    text-align: center;
+    background-color: rgb(39, 39, 39);
+    color: white;
+    height: 80px;
+    padding-top: 3px;
+}
+
+nav {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 80px 80px 80px 80px;
+    background-color: rgb(99, 99, 99);
+    height: 25px;
+    padding-top: 5px;
+}
+
+nav a {
+    width: fit-content;
+    color: white;
+    text-decoration: none;
+}
+
+.container {
+    display: grid;
+    gap: 10px;
+    margin: 5%;
+    margin-top: 20px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    padding: 20px;
+    padding-top: 5px;
+}
+
+.box {
+    height: 50px;
+    text-align: center;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    padding-top: 30px;
+}
+
+.über-klein {
+    color: black;
+    box-shadow: 0 0;
+    height: 20px;
+    padding-top: 0px;
+    text-align: left;
+}
+
+.light-blue {
+    background-color: rgb(120, 189, 212);
+}
+
+.red-box {
+    background-color: red;
+}
+
+.green-box {
+    background-color: green;
+}
+
+.blue-box {
+    background-color: blue;
+}
