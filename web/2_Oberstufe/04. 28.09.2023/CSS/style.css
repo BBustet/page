@@ -1,0 +1,47 @@
+.container {
+    display: grid;
+    grid-template-columns: 10% 2.4fr 10%;
+    grid-template-rows: 100px 50px 50px 50px 100px 100px 100px 100px;
+    gap: 5px 0px;
+    grid-template-areas:
+        "Header Header Header"
+        "Navbar Navbar Navbar"
+        "Leer Leer Leer"
+        ". Überschrift ."
+        ". Box-Hellblau ."
+        ". Box-Rot ."
+        ". Box-Grün ."
+        ". Box-Blau .";
+    justify-content: center;
+    align-content: center;
+}
+.Navbar {
+    grid-area: Navbar;
+    background-color: rgb(87, 87, 87);
+}
+.Leer {
+    grid-area: Leer;
+}
+.Überschrift {
+    grid-area: Überschrift;
+}
+.Box-Hellblau {
+    grid-area: Box-Hellblau;
+    background-color: rgb(158, 231, 255);
+}
+.Box-Rot {
+    grid-area: Box-Rot;
+    background-color: red;
+}
+.Box-Grün {
+    grid-area: Box-Grün;
+    background-color: green;
+}
+.Box-Blau {
+    grid-area: Box-Blau;
+    background-color: blue;
+}
+.Header {
+    grid-area: Header;
+    background-color: rgb(48, 48, 48);
+}
