@@ -14,10 +14,21 @@
         ". Box-Blau .";
     justify-content: center;
     align-content: center;
+    text-align: center;
+    margin-left: 0;
+    margin-right: 0;
 }
+
+.Header {
+    grid-area: Header;
+    background-color: rgb(48, 48, 48);
+    color: white;
+}
+
 .Navbar {
     grid-area: Navbar;
     background-color: rgb(87, 87, 87);
+    color: white;
 }
 .Leer {
     grid-area: Leer;
@@ -28,20 +39,20 @@
 .Box-Hellblau {
     grid-area: Box-Hellblau;
     background-color: rgb(158, 231, 255);
+    color: white;
 }
 .Box-Rot {
     grid-area: Box-Rot;
     background-color: red;
+    color: white;
 }
 .Box-Grün {
     grid-area: Box-Grün;
     background-color: green;
+    color: white;
 }
 .Box-Blau {
     grid-area: Box-Blau;
     background-color: blue;
-}
-.Header {
-    grid-area: Header;
-    background-color: rgb(48, 48, 48);
+    color: white;
 }
