@@ -79,3 +79,24 @@ h1, h2, h3, h4, h5, h6 {
 	color: white;
 }
 
+.willkommen {
+	height: 200px;
+}
+
+.uno {
+	background-image: url(../bilder/Herbst.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.dos {
+	background-image: url(../bilder/Winter.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.tres {
+	background-image: url(../bilder/Frühling.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
