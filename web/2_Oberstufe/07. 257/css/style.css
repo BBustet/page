@@ -110,14 +110,23 @@ body {
   .navbar li a, .navbar .navbar-brand {
       color: #fff !important;
   }
-  .navbar-nav li a:hover, .navbar-nav li.active a {
+
+  /*.nav-item:hover {
+      background-color: white;
+      color: #0833a8;
+  }*/
+
+ .navbar-nav li a:hover, .navbar-nav li.active a {
       color: #0833a8 !important;
-      background-color: #fff !important;
+      background-color: #fff !important; 
   }
   .navbar-default .navbar-toggle {
       border-color: transparent;
       color: #fff !important;
   }
+
+  
+
   footer .glyphicon {
       font-size: 20px;
       margin-bottom: 20px;
@@ -178,3 +187,4 @@ display:none;
 background-color: #0833a8;
 color:white;
 width: 270px;}
+
