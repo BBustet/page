@@ -2,9 +2,9 @@
 
 	<head>
 		<title>Fallhöhe</title>
-
 		<code von Christian></code>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<script>
 			"use strict";
 
@@ -26,18 +26,16 @@
 
 				vOutput = "Touchdown nach exakt: " + vErgebnis + " Sekunden";
 
-				vOutput = vOutput + "</br ></br > <table border=1><tr><th>Falldauer</th><th>Höhe des Heißluftballons</th></tr>";
+				vOutput = vOutput + "</br ></br > <table><tr><th class=topleft>Falldauer</th><th class=topright>Höhe des Heißluftballons</th></tr>";
 
 
-				while (vHiM >= 0) {
-					vOutput = vOutput + "<tr><td>" + vZähler + " Sek</td><td>" + vHiM + " m</td></tr>";
+				while (vHiM > 0) {
+					vOutput = vOutput + "<tr class=lebt><td>" + vZähler + " Sek</td><td>" + vHiM + " m</td></tr>";
 					vHiM = parseFloat(vHiM) - parseFloat(vFpS);
 					vZähler = parseFloat(vZähler) + 1;
 				}
 
-				if (vHiM > 0 - vFpS) {
-					vOutput = vOutput + "<tr><td>" + vZähler + " Sek</td><td>0 m</td></tr>";
-				}
+				vOutput = vOutput + "<tr class=tod><td class=bottomleft>" + vZähler + " Sek</td><td class=bottomright>0 m</td></tr>";
 
 				document.getElementById("idOutput").innerHTML = vOutput;
 
@@ -54,7 +52,7 @@
 		Fallhöhe pro Sekunde <input type="text" id="idInputFpS" value="1.5"></br>
 		Höhe in Meter <input type="text" id="idInputHiM" value="200"></br>
 		</br>
-		<button onclick="fFallhöhe();">fTest</button> </br>
+		<button onclick="fFallhöhe();">Berechne</button> </br>
 		</br>
 		<div id="idOutput">Hier kommt gleich das Ergebnis</div>
 

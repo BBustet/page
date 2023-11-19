@@ -1,0 +1,45 @@
+body {
+    background-color: rgb(35, 35, 35);
+    color: white;
+}
+
+input {
+    background-color: rgb(61, 61, 61);
+    color: white;
+}
+
+table {
+    border-radius: 20px;
+    border: 1px solid;
+    border-inline: 1px solid;
+}
+
+th,
+td {
+    border: 1px solid;
+    padding: 10px;
+}
+
+.topleft {
+    border-top-left-radius: 17.5px;
+}
+
+.topright {
+    border-top-right-radius: 17.5px;
+}
+
+.bottomleft {
+    border-bottom-left-radius: 17.5px;
+}
+
+.bottomright {
+    border-bottom-right-radius: 17.5px;
+}
+
+.lebt {
+    background-color: rgba(0, 77, 0, 0.36);
+}
+
+.tod {
+    background-color: rgba(109, 0, 0, 0.36);
+}
