@@ -29,20 +29,20 @@
 
 
 
-				vOutput = vOutput + </br ></br > <table border="1"><tr><th> + "Falldauer" + </th><th> + "Höhe des Heißluftballons" + </th></tr>;
-				
+				vOutput = vOutput + "</br ></br > <table border=1><tr><th>Falldauer</th><th>Höhe des Heißluftballons</th></tr>";
+
 				while (vHiM >= 0) {
-						vOutput = vOutput + <tr><td>vZähler + " Sek" + </td><td>vHiM + " m"</td></tr>;
+					vOutput = vOutput + <tr><td>vZähler + " Sek" + </td><td>vHiM + " m"</td></tr>;
 					vHiM = parseFloat(vHiM) - parseFloat(vFpS);
 					vZähler = parseFloat(vZähler) + 1;
 				}
 
 
 
-					document.getElementById("idOutput").innerHTML = vOutput;
-				
-				
-				
+				document.getElementById("idOutput").innerHTML = vOutput;
+
+
+
 			}
 
 		</script>
@@ -56,7 +56,7 @@
 		Fallhöhe pro Sekunde <input type="text" id="idInputFpS" value="1.5"></br>
 		Höhe in Meter <input type="text" id="idInputHiM" value="200"></br>
 		</br>
-		<button onClick="fFallhöhe()">Berechne</button></br>
+		<button onclick="fFallhöhe()">Berechne</button> </br>
 		</br>
 		<div id="idOutput">Hier kommt gleich das Ergebnis</div>
 
