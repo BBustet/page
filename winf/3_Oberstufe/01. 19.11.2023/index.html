@@ -12,13 +12,14 @@
 				var vFpS;
 				var vHiM;
 				var vZähler = 0;
-				var vZErgebnis;
 				var vErgebnis;
 				var vOutput;
 
 
+
 				vFpS = document.getElementById("idInputFpS").value;
 				vHiM = document.getElementById("idInputHiM").value;
+
 
 
 				vErgebnis = parseFloat(vHiM) / parseFloat(vFpS);
@@ -38,7 +39,6 @@
 				vOutput = vOutput + "<tr class=tod><td class=bottomleft>" + vZähler + " Sek</td><td class=bottomright>0 m</td></tr>";
 
 				document.getElementById("idOutput").innerHTML = vOutput;
-
 			}
 
 		</script>
@@ -49,8 +49,8 @@
 
 		<h2>Heißluftballon Fallhöhe</h2>
 
-		Fallhöhe pro Sekunde <input type="text" id="idInputFpS" value="1.5"></br>
-		Höhe in Meter <input type="text" id="idInputHiM" value="200"></br>
+		Fallhöhe pro Sekunde: <input type="text" id="idInputFpS" value="1.5"></br>
+		Höhe in Meter: <input type="text" id="idInputHiM" value="200"></br>
 		</br>
 		<button onclick="fFallhöhe();">Berechne</button> </br>
 		</br>
