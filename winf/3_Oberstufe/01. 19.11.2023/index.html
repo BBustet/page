@@ -1,13 +1,13 @@
 <html>
 
-   <head>
-      	<title>Fallhöhe</title>
+	<head>
+		<title>Fallhöhe</title>
 
-      	<code von Christian></code>
-      	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-      	<script>
-       	"use strict";
-			
+		<code von Christian></code>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<script>
+			"use strict";
+
 			function fFallhöhe() {
 				var vFpS;
 				var vHiM;
@@ -15,51 +15,51 @@
 				var vZErgebnis;
 				var vErgebnis;
 				var vOutput;
-				
+
 				vFpS = document.getElementById("idInputFpS").value;
 				vHiM = document.getElementById("idInputHiM").value;
-				
-				vErgebnis = parseFloat(vHiM)/parseFloat(vFpS);
-				
+
+				vErgebnis = parseFloat(vHiM) / parseFloat(vFpS);
+
 				vOutput = "Touchdown nach exakt: " + vErgebnis + " Sekunden";
-				
-				
-				
+
+
+
 				document.getElementById("idOutput").innerHTML = vHiM;
-				
-				
-				
-				vOutput = vOutput + </br></br><table border=1><tr><th> + "Falldauer" + </th><th> + "Höhe des Heißluftballons" + </th></tr>;
+
+
+
+				vOutput = vOutput + </br ></br > <table border="1"><tr><th> + "Falldauer" + </th><th> + "Höhe des Heißluftballons" + </th></tr>;
 				
 				while (vHiM >= 0) {
-					vOutput = vOutput + <tr><td>vZähler + " Sek" + </td><td>vHiM + " m"</td></tr>;
+						vOutput = vOutput + <tr><td>vZähler + " Sek" + </td><td>vHiM + " m"</td></tr>;
 					vHiM = parseFloat(vHiM) - parseFloat(vFpS);
 					vZähler = parseFloat(vZähler) + 1;
 				}
-				
-				
-				
-				document.getElementById("idOutput").innerHTML = vOutput;
+
+
+
+					document.getElementById("idOutput").innerHTML = vOutput;
 				
 				
 				
 			}
 
-      	</script>
+		</script>
 
-   </head>
+	</head>
 
 	<body>
-	
-       <h2>Heißluftballon Fallhöhe</h2>
+
+		<h2>Heißluftballon Fallhöhe</h2>
 
 		Fallhöhe pro Sekunde <input type="text" id="idInputFpS" value="1.5"></br>
 		Höhe in Meter <input type="text" id="idInputHiM" value="200"></br>
 		</br>
-		<button onClick="fFallhöhe()">Berechne</button></br> 
+		<button onClick="fFallhöhe()">Berechne</button></br>
 		</br>
 		<div id="idOutput">Hier kommt gleich das Ergebnis</div>
-		
+
 	</body>
 
 </html>
