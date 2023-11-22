@@ -6,7 +6,7 @@ body {
 input {
     background-color: rgb(61, 61, 61);
     color: white;
-    border: 3px inset;
+    border: 2px inset;
     border-radius: 7.5px;
     width: 75px;
 }
@@ -21,6 +21,21 @@ th,
 td {
     border: 1px solid;
     padding: 10px;
+}
+
+button {
+    background-color: rgb(167, 219, 88);
+    border-radius: 5px;
+    border: 1px outset;
+}
+
+button:hover {
+    background-color: rgb(178, 255, 61);
+}
+
+button:active {
+    background-color: rgb(51, 197, 255);
+    border: 1px inset;
 }
 
 .topleft {
