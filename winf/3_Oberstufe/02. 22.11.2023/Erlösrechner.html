@@ -38,6 +38,7 @@
 				vKostGesamt = parseFloat(vKF) + (parseFloat(vKV)*parseFloat(vMenge));
 				vE = parseFloat(vStueckPreis) * parseFloat(vMenge);
 				vG = parseFloat(vE) - parseFloat(vKostGesamt);
+				vGewinnGesamt = vGewinnGesamt + vG;
 				
 				if (vG<0) {
 
@@ -54,7 +55,6 @@
 
 				}
 
-				vGewinnGesamt = vG;
 
 				vMenge = parseFloat(vMenge) + 1000;
 			}
