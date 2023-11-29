@@ -1,6 +1,7 @@
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<link rel="stylesheet" type="text/css" href="css/style.css">
 		<title>Erlösrechner</title>
 			<script>
 			"use strict";
@@ -40,22 +41,25 @@
 				
 				if (vG<0) {
 
-					vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt + " €</td><td>" + vE + " €</td><td style=color:red>" + vG + " €</td><td>Verlustzone</td></tr>";
+					vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " €</td><td>" + vE.toFixed(2) + " €</td><td style=color:red>" + vG.toFixed(2) + " €</td><td>Verlustzone</td></tr>";
 
 				} else if (vG>0) {
 
-					vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt + " €</td><td>" + vE + " €</td><td>" + vG + " €</td><td>Gewinnzone</td></tr>";
+					vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " €</td><td>" + vE.toFixed(2) + " €</td><td>" + vG.toFixed(2) + " €</td><td>Gewinnzone</td></tr>";
 
 				} else {
-
-					vAusgabe = vAusgabe + "<tr style=background-color:rgb(6,184,0)><td>" + vMenge + "</td><td>" + vKostGesamt + " €</td><td>" + vE + " €</td><td style=color:red>" + vG + " €</td><td>Gewinnschwelle</td></tr>";
+					vBEP = vMenge;
+					vGewinnschwelle = vKostGesamt;
+					vAusgabe = vAusgabe + "<tr style=background-color:rgb(6,184,0)><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " €</td><td>" + vE.toFixed(2) + " €</td><td style=color:red>" + vG.toFixed(2) + " €</td><td>Gewinnschwelle</td></tr>";
 
 				}
 
-				
+				vGewinnGesamt = vG;
 
 				vMenge = parseFloat(vMenge) + 1000;
 			}
+			
+			vAusgabe = "------------------------------------------<br/>Break-Even-Point: " + vBEP + " Stück<br/>------------------------------------------<br/>Gewinnschwelle: " + vGewinnschwelle.toFixed(2) + " €<br/>------------------------------------------<br/>Gesamtgewinn: " + vGewinnGesamt.toFixed(2) + " €<br/>------------------------------------------<br/>" + vAusgabe;
 			
 			document.getElementById("idAusgabe").innerHTML = vAusgabe;
 
