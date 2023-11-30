@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <title>Waffel-Verkauf-to-go</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script>
+        "use strict";
+        function fErloesrechner() {
+            // Initialisierung der Variablen
+            var vProduktionsmenge;
+            var vAusgabe;
+            var vKV;
+            var vKostGesamt;
+            var vKF;
+            var vStueckPreis;
+            var vE, vG;
+            var vBEP;
+            var vGewinnschwelle;
+            var vMenge = 0;
+            var vGewinnGesamt = 0.00;
+
+            // Einlesen der Werte aus den Eingabefeldern
+            vProduktionsmenge = parseFloat(document.getElementById("idProduktionsmenge").value);
+            vStueckPreis = parseFloat(document.getElementById("idPreis").value);
+            vKV = parseFloat(document.getElementById("idKV").value);
+            vKF = parseFloat(document.getElementById("idKF").value);
+
+            // Initialisierung der Ausgabe
+            vAusgabe = "<table border=1>";
+            vAusgabe += "<tr><th>Menge</th><th>Kosten K(x) = k<sub>F</sub> + k<sub>v</sub> * x </th><th>Erlöse E (x) = p * x </td><th>Gewinn G(x) = E(x) - K(x)</th><th>Bemerkung</th></tr>";
+
+            // Schleife für die Berechnungen
+            for (vMenge = 0; vMenge <= vProduktionsmenge; vMenge += 50) {
+                // Gesamtkosten
+                vKostGesamt = vKF + vKV * vMenge;
+                
+                // Erlös
+                vE = vStueckPreis * vMenge;
+                
+                // Gewinn
+                vG = vE - vKostGesamt;
+
+                // Verlustzone oder Gewinnzone markieren
+                var bemerkung = (vG < 0) ? "Verlustzone" : "Gewinnzone";
+
+                // Ausgabe der Daten in die Tabelle
+                vAusgabe += "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + "</td><td>" + vE.toFixed(2) + "</td><td>" + vG.toFixed(2) + "</td><td>" + bemerkung + "</td></tr>";
+            }
+
+            // Berechnung der Gewinnschwelle
+            vBEP = Math.round(-vKF / (vStueckPreis - vKV));
+            vGewinnschwelle = vBEP * vStueckPreis;
+
+            // Ausgabe der Gewinnschwelle und Break-Even-Point
+            vAusgabe += "</table></br>";
+            vAusgabe += "Break-Even-Point: " + vBEP + " Stücke<br>";
+            vAusgabe += "Gewinnschwelle: " + vGewinnschwelle.toFixed(2) + " Euro<br>";
+
+            // Ausgabe im HTML-Dokument
+            document.getElementById("idAusgabe").innerHTML = vAusgabe;
+        }
+    </script>
+</head>
+<body>
+    <img src="waffeln.PNG" width="340px" height="260px">
+
+    <h1>Waffel-Verkauf-to-go</h1>
+    Kosten-Variabel(k, pro Waffel): <input id="idKV" value="1.20" size="6">
+    Kosten-Fix: <input id="idKF" value="250.00" size="6"><br/><br/>
+    Verkaufsmenge(x): <input id="idProduktionsmenge" value="500" size="6">
+    Stückpreis(p): <input id="idPreis" value="3.50" size="6">
+    <button onclick="fErloesrechner();">Kostentabelle!</button><br><br>
+    <div id="idAusgabe"></div>
+</body>
+</html>
