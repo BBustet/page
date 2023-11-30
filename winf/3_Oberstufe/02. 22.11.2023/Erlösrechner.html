@@ -20,6 +20,7 @@
 			var vGewinnschwelle;
 			var vMenge=1000;
 			var vGewinnGesamt=0.00;
+			var vRechnung1;
 					
 
 			vProduktionsmenge = parseFloat(document.getElementById("idProduktionsmenge").value);
@@ -28,6 +29,16 @@
 			vKV=parseFloat(document.getElementById("idKV").value);
 			vKF=parseFloat(document.getElementById("idKF").value);
 
+			//Gesamtewinn berechnen mit Gewinnformel
+			vGewinnGesamt = (vStueckPreis * vProduktionsmenge) - (vKF + (vKV * vProduktionsmenge));
+
+			//BEP berechnen mit umgestellter Gewinnformel
+			vRechnung1 = vStueckPreis - vKV;
+			vBEP = vKF / vRechnung1;
+
+			//Gewinnschwelle berechnen indem man x bei der Erlösrechnung einsetzt (BEP)
+			vGewinnschwelle = vStueckPreis * vBEP;
+
 			vAusgabe = "";
 			vAusgabe = vAusgabe + "<table border=1>";
 			vAusgabe = vAusgabe + "<tr><th>Menge</th><th>Kosten K(x) = k<sub>F</sub> + k<sub>v</sub> * x </th><th>Erlöse E (x) = p * × </td><th>Gewinn G(x) = E(x) - K(x)</th><th>Bemerkung</th></tr>";
@@ -35,10 +46,9 @@
 			
 
 			while (vMenge<=vProduktionsmenge){
-				vKostGesamt = parseFloat(vKF) + (parseFloat(vKV)*parseFloat(vMenge));
-				vE = parseFloat(vStueckPreis) * parseFloat(vMenge);
-				vG = parseFloat(vE) - parseFloat(vKostGesamt);
-				vGewinnGesamt = vGewinnGesamt + vG;
+				vKostGesamt = vKF + (vKV * vMenge);
+				vE = vStueckPreis * vMenge;
+				vG = vE - vKostGesamt;
 				
 				if (vG<0) {
 
@@ -49,8 +59,7 @@
 					vAusgabe = vAusgabe + "<tr><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " €</td><td>" + vE.toFixed(2) + " €</td><td>" + vG.toFixed(2) + " €</td><td>Gewinnzone</td></tr>";
 
 				} else {
-					vBEP = vMenge;
-					vGewinnschwelle = vKostGesamt;
+					
 					vAusgabe = vAusgabe + "<tr style=background-color:rgb(6,184,0)><td>" + vMenge + "</td><td>" + vKostGesamt.toFixed(2) + " €</td><td>" + vE.toFixed(2) + " €</td><td style=color:red>" + vG.toFixed(2) + " €</td><td>Gewinnschwelle</td></tr>";
 
 				}
@@ -59,7 +68,7 @@
 				vMenge = parseFloat(vMenge) + 1000;
 			}
 			
-			vAusgabe = "------------------------------------------<br/>Break-Even-Point: " + vBEP + " Stück<br/>------------------------------------------<br/>Gewinnschwelle: " + vGewinnschwelle.toFixed(2) + " €<br/>------------------------------------------<br/>Gesamtgewinn: " + vGewinnGesamt.toFixed(2) + " €<br/>------------------------------------------<br/>" + vAusgabe;
+			vAusgabe = "------------------------------------------<br/>Break-Even-Point: " + vBEP.toFixed(0) + " Stück<br/>------------------------------------------<br/>Gewinnschwelle: " + vGewinnschwelle.toFixed(2) + " €<br/>------------------------------------------<br/>Gesamtgewinn: " + vGewinnGesamt.toFixed(2) + " €<br/>------------------------------------------<br/>" + vAusgabe;
 			
 			document.getElementById("idAusgabe").innerHTML = vAusgabe;
 
