@@ -11,18 +11,16 @@
             function fArrayÜbung() {
                 var vObst;
                 var vAusgabe = "";
-                var vAnzahl;
                 var vListe = "<ol>";
 
                 vObst = document.getElementById("idInput").value;
                 vObstsorten.push(vObst);
-                vAnzahl = vObstsorten.length;
 
                 for (var i = 0; i < vObstsorten.length; i++) {
                     vListe += "<li>" + vObstsorten[i] + "</li>";
                 }
 
-                vAusgabe = vAusgabe + "Inhalte deines Warenkorbs: " + vListe + "<br/>Anzahl der Inhalte: " + vAnzahl;
+                vAusgabe = vAusgabe + "Inhalte deines Warenkorbs: " + vListe + "<br/>Anzahl der Inhalte: " + i;
                 
                 document.getElementById("idAusgabe").innerHTML = vAusgabe;
             }
