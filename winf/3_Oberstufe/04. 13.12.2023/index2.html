@@ -1,0 +1,47 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script>
+            "use strict";
+            
+            var vObstsorten = [];
+
+            function fArrayÜbung() {
+                var vObst;
+                var vAusgabe = "";
+                var vAnzahl;
+                var vListe = "<ol>";
+
+                vObst = document.getElementById("idInput").value;
+                vObstsorten.push(vObst);
+                vAnzahl = vObstsorten.length;
+
+                for (var i = 0; i < vObstsorten.length; i++) {
+                    vListe += "<li>" + vObstsorten[i] + "</li>";
+                }
+
+                vAusgabe = vAusgabe + "Inhalte deines Warenkorbs: " + vListe + "<br/>Anzahl der Inhalte: " + vAnzahl;
+                
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+
+
+
+
+        </script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Arrays</h1>
+            <input type="text" value="Zitrone" id="idInput">
+            <button onClick="fArrayÜbung();">Array</button>
+            <div id="idAusgabe"></div>
+        </div>
+    </body>
+
+</html>

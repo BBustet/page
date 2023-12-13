@@ -1,0 +1,43 @@
+<html>
+
+    <head>
+        <title>Titel</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <script>
+            "use strict";
+
+            function fArrayÜbung() {
+
+                var vzArray = [1, 2, 3, 4, 5, 6];
+                var vSumme = 0;
+                var vAusgabe = "";
+                var vMittelwert;
+
+                for (var i = 0; i < vzArray.length; i++) {
+                    vSumme += vzArray[i];
+                }
+
+                vMittelwert = vSumme / vzArray.length;
+                
+                vAusgabe = vAusgabe + "<br/>Summe der im Array enthaltenen Zahlen: " + vSumme;
+                vAusgabe = vAusgabe + "<br/>Mittelwert: " + vMittelwert;
+                document.getElementById("idAusgabe").innerHTML = vAusgabe;
+            }
+
+
+
+
+
+        </script>
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Arrays</h1>
+            <button onClick="fArrayÜbung();">Array</button>
+            <div id="idAusgabe"></div>
+        </div>
+    </body>
+
+</html>
