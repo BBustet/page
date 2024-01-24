@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tilgungsplan</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        function fTilgungsplan() {
+            var vKreditsumme = parseFloat(document.getElementById("ID_Kreditsumme").value);
+            var vLaufzeit = parseFloat(document.getElementById("ID_Laufzeit").value);
+            var vZinssatz = parseFloat(document.getElementById("ID_Zinssatz").value) / 100;
+            var vZinsen;
+            var vAnnuitaet;
+            var vTilgung;
+            var vRestschuld = vKreditsumme;
+            var vAnfangsschuld = vRestschuld;
+            var vTemp;
+            var vAusgabe="";
+            var vStartjahr = 1;
+
+            vAusgabe = "<table class='table table-bordered'><thead class='thead-dark'><tr><th>Jahr</th><th>Schuld in €</th>" + "<th>Zinsen in €</th><th>Annuität in €</th>" + "<th>Tilgung in €</th><th>Restschuld in €</th></tr></thead><tbody>";
+
+            vTemp = 1 + vZinssatz;
+            vAnnuitaet = vKreditsumme * ((Math.pow(vTemp, vLaufzeit) * vZinssatz)/(Math.pow(vTemp, vLaufzeit) - 1));
+
+           
+            while (vStartjahr <= vLaufzeit) {
+                vZinsen = vAnfangsschuld * vZinssatz;
+                vTilgung = vAnnuitaet - vZinsen;
+                vRestschuld = vAnfangsschuld- vTilgung;
+
+                vAusgabe = vAusgabe + "<tr><td>" + vStartjahr + "</td><td>" + vAnfangsschuld.toFixed(2) + " €</td><td>" + vZinsen.toFixed(2) + " €</td><td>" + vAnnuitaet.toFixed(2) + " €</td><td>" + vTilgung.toFixed(2) + " €</td><td>" + vRestschuld.toFixed(2) + " €</td></tr>";
+
+                document.getElementById("ID_Output").innerHTML = vAusgabe;
+
+                vAnfangsschuld = vRestschuld;
+                vStartjahr = vStartjahr + 1;
+            }
+
+
+        }
+    </script>
+</head>
+<body class="container mt-5">
+    <h1 class="mb-4">Tilgungsplan</h1>
+    <div class="form-group">
+        <label for="ID_Kreditsumme">Kreditbetrag(€):</label>
+        <input type="text" class="form-control" id="ID_Kreditsumme" value="400000">
+    </div>
+    <div class="form-group">
+        <label for="ID_Laufzeit">Laufzeit (Jahren):</label>
+        <input type="text" class="form-control" id="ID_Laufzeit" value="20">
+    </div>
+    <div class="form-group">
+        <label for="ID_Zinssatz">Zinssatz (%):</label>
+        <input type="text" class="form-control" id="ID_Zinssatz" value="5">
+    </div>
+    <button class="btn btn-primary" onClick="fTilgungsplan();">Berechne</button>
+    <div id="ID_Output" class="mt-4"></div>
+
+    <!-- Bootstrap JS and Popper.js (required for Bootstrap components) -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+</html>
