@@ -24,8 +24,7 @@
                 var vBefore = vArray;
                 var vOutput;
 
-                vArrayOutputB = vArray.join(", ");
-                document.getElementById("idOutput1").innerHTML = vArrayOutputB;
+
 
                 //Schleife für anzahl bereits sortierter Zahlen
                 for (var vSorted = 0; vSorted < vArray.length; vSorted++) {
@@ -45,6 +44,8 @@
 
                 }
 
+                vArrayOutputB = vArray.join(", ");
+                document.getElementById("idOutput1").innerHTML = vArrayOutputB;
                 vArrayOutput = vArray.join(", ");
                 document.getElementById("idOutput2").innerHTML = vArrayOutput;
 
