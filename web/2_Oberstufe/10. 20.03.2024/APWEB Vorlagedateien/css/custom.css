@@ -13,7 +13,28 @@
       
   }
   
-  
+.panel-body {
+	justify-content: left;
+}
+
+  .bild {
+	  margin-top: 10px;
+	  margin-right: 100px;
+  }
+
+  .kontakt {
+	  margin-top: 75px;
+	  margin-left: 10px;
+  }
+
+  .kontaktinfo {
+	  color: green;
+	  background-color: rgba(124, 255, 124, 0.534);
+	  width: 750px;
+	  padding: 20px;
+	  border: green solid 1px;
+	border-radius: 5px;
+  }
 
 body {
 	padding-top: 50px;
