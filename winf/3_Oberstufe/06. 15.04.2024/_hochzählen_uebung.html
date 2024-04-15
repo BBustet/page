@@ -14,10 +14,15 @@
 
 				vInput = document.getElementById("idInput").value;
 
-				vOutput = "<table border=1 >";
+				vOutput = "<table border=1 style=border-radius:13px>";
 
 				while (vZähler<=vInput) {
-					vOutput += "<tr><td style=padding:7px>" + vZähler.toFixed(0) + "</td></tr>";
+					if (vZähler%2 == 0) {
+						vOutput += "<tr><td style=background-color:green;color:white;border-radius:10px;padding:7px>" + vZähler.toFixed(0) + "</td></tr>";
+					
+					} else {
+						vOutput += "<tr><td style=background-color:red;color:white;border-radius:10px;padding:7px>" + vZähler.toFixed(0) + "</td></tr>";
+					}
 					vZähler++;
 				}
 
